@@ -1,0 +1,18 @@
+server:
+  port: 8001
+spring:
+  application: gts-manage-education
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1/gootschool?useSSL=true&serverTimezone=UTC
+    username: root
+    password: admin
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis-plus: #打印 SQL 语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
