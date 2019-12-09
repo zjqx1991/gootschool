@@ -16,6 +16,10 @@
             <groupId>com.gootschool.gts</groupId>
             <artifactId>gts-framework-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.gootschool.gts</groupId>
+            <artifactId>gts-framework-pojo</artifactId>
+        </dependency>
 
         <!--swagger-->
         <dependency>

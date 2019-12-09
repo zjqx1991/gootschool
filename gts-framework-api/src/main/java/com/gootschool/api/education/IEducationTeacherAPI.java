@@ -1,15 +1,12 @@
 package com.gootschool.api.education;
 
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.pojo.education.request.TeacherQuery;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @Api(value = "讲师管理", description = "讲师管理，提供讲师的增、删、改、查")
@@ -21,14 +18,23 @@ public interface IEducationTeacherAPI {
     RevanResponse list();
 
 
+    /**
+     * RequestBody json类型数据必须使用 POST
+     * @param page
+     * @param size
+     * @param teacherQuery
+     * @return
+     */
     @ApiOperation("讲师分页列表")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "page", value = "页码", required = true, paramType = "path", dataType = "int"),
-            @ApiImplicitParam(name = "size", value = "个数", required = true, paramType = "path", dataType = "int")
+            @ApiImplicitParam(name = "size", value = "个数", required = true, paramType = "path", dataType = "int"),
+            @ApiImplicitParam(name = "teacherQuery", value = "查询条件", required = false),
     })
-    @GetMapping("/list/{page}/{size}")
+    @PostMapping("/list/{page}/{size}")
     RevanResponse listPage(@PathVariable("page") Integer page,
-                           @PathVariable("size") Integer size);
+                           @PathVariable("size") Integer size,
+                           @RequestBody(required = false) TeacherQuery teacherQuery);
 
     @ApiOperation("讲师删除")
     @ApiImplicitParams({

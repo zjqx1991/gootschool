@@ -5,6 +5,7 @@ import com.gootschool.api.education.IEducationTeacherAPI;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.education.service.ITeacherService;
 import com.gootschool.pojo.education.Teacher;
+import com.gootschool.pojo.education.request.TeacherQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,10 +32,12 @@ public class TeacherController implements IEducationTeacherAPI {
         return this.teacherService.teacherList();
     }
 
+
     @Override
     public RevanResponse listPage(@PathVariable("page") Integer page,
-                                  @PathVariable("size") Integer size) {
-        return this.teacherService.listPage(page, size);
+                                  @PathVariable("size") Integer size,
+                                  @RequestBody TeacherQuery teacherQuery) {
+        return this.teacherService.listPage(page, size, teacherQuery);
     }
 
     @Override
