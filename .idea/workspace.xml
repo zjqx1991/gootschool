@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/RevanException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/utils/RevanExceptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/CommonMetaObjectHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/response/RevanResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/response/RevanResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/GlobalExceptionHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +50,11 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-manage-education/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -68,6 +64,7 @@
       <recent name="com.gootschool.education" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gts-manage-education/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler" />
     </key>
   </component>
@@ -154,11 +151,6 @@
           <url>file://$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java</url>
           <line>13</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
