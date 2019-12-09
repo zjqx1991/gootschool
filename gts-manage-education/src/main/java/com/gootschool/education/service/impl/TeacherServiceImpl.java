@@ -3,6 +3,8 @@ package com.gootschool.education.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.gootschool.common.code.RevanCodeEnum;
+import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.education.mapper.ITeacherMapper;
 import com.gootschool.education.service.ITeacherService;
@@ -85,7 +87,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
     public RevanResponse removeByTId(String id) {
         int delete = this.baseMapper.deleteById(id);
         if (delete != 1) {
-            throw new RuntimeException(id + "参数错误");
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
         }
         return RevanResponse.ok();
     }
@@ -96,7 +98,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
         if (StringUtils.isBlank(teacher.getId())) {
             int insert = this.baseMapper.insert(teacher);
             if (insert != 1) {
-                throw new RuntimeException("teach不存在");
+                throw new RevanException(RevanCodeEnum.PARAM_FAIL);
             }
             return RevanResponse.ok();
         }
@@ -104,7 +106,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
         // 2.更新
         int update = this.baseMapper.updateById(teacher);
         if (update != 1) {
-            throw new RuntimeException("teach不存在");
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
         }
         return RevanResponse.ok();
     }
@@ -113,7 +115,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
     public RevanResponse queryById(String id) {
         Teacher teacher = this.baseMapper.selectById(id);
         if (teacher == null) {
-            throw new RuntimeException("teach不存在");
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
         }
         return RevanResponse.ok().data("teacher", teacher);
     }

@@ -45,6 +45,14 @@ public class RevanResponse {
         return response;
     }
 
+    public static RevanResponse error(RevanCodeEnum codeEnum) {
+        RevanResponse response = new RevanResponse();
+        response.setSuccess(codeEnum.getSuccess());
+        response.setCode(codeEnum.getCode());
+        response.setMessage(codeEnum.getMessage());
+        return response;
+    }
+
     public static RevanResponse response(RevanCodeEnum revanCodeEnum) {
         RevanResponse response = new RevanResponse();
         response.setSuccess(revanCodeEnum.getSuccess());
