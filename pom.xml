@@ -12,6 +12,7 @@
         <module>gts-manage-education</module>
         <module>gts-framework-pojo</module>
         <module>gts-framework-api</module>
+        <module>gts-framework-common</module>
     </modules>
 
     <parent>
@@ -22,6 +23,11 @@
     </parent>
 
     <properties>
+
+        <com.gootschool.gts.api>1.0-SNAPSHOT</com.gootschool.gts.api>
+        <com.gootschool.gts.pojo>1.0-SNAPSHOT</com.gootschool.gts.pojo>
+        <com.gootschool.gts.common>1.0-SNAPSHOT</com.gootschool.gts.common>
+
         <java.version>1.8</java.version>
         <com.baomidou.mybatis.plus.version>3.0.5</com.baomidou.mybatis.plus.version>
         <org.apache.velocity.velocity.version>2.0</org.apache.velocity.velocity.version>
@@ -33,6 +39,23 @@
     <dependencyManagement>
 
         <dependencies>
+
+            <dependency>
+                <groupId>com.gootschool.gts</groupId>
+                <artifactId>gts-framework-pojo</artifactId>
+                <version>${com.gootschool.gts.pojo}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gootschool.gts</groupId>
+                <artifactId>gts-framework-api</artifactId>
+                <version>${com.gootschool.gts.api}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gootschool.gts</groupId>
+                <artifactId>gts-framework-common</artifactId>
+                <version>${com.gootschool.gts.common}</version>
+            </dependency>
+
             <!--数据库驱动-->
             <dependency>
                 <groupId>mysql</groupId>

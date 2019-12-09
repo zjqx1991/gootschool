@@ -2,6 +2,7 @@ package com.gootschool.education.controller;
 
 
 import com.gootschool.api.education.IEducationTeacherAPI;
+import com.gootschool.common.response.RevanResponse;
 import com.gootschool.education.service.ITeacherService;
 import com.gootschool.pojo.education.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,17 +27,13 @@ public class TeacherController implements IEducationTeacherAPI {
 
 
     @Override
-    public List list() {
-        List<Teacher> list = this.teacherService.list(null);
-        for (Teacher teacher : list) {
-            System.out.println(teacher);
-        }
-        return list;
+    public RevanResponse list() {
+        return this.teacherService.teacherList();
     }
 
     @Override
-    public boolean removeById(String id) {
-        return false;
+    public RevanResponse removeById(@PathVariable("id") String id) {
+        return this.teacherService.removeByTId(id);
     }
 }
 

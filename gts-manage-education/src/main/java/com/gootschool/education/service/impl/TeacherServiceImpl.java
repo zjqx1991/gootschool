@@ -1,10 +1,13 @@
 package com.gootschool.education.service.impl;
 
+import com.gootschool.common.response.RevanResponse;
 import com.gootschool.education.mapper.ITeacherMapper;
 import com.gootschool.education.service.ITeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gootschool.pojo.education.Teacher;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +19,23 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> implements ITeacherService {
+
+    @Override
+    public RevanResponse teacherList() {
+        List<Teacher> teacherList = this.baseMapper.selectList(null);
+        for (Teacher teacher : teacherList) {
+            System.out.println(teacher);
+        }
+        return RevanResponse.ok().data("items", teacherList);
+    }
+
+    @Override
+    public RevanResponse removeByTId(String id) {
+        int delete = this.baseMapper.deleteById(id);
+        if (delete != 1) {
+            throw new RuntimeException(id + "参数错误");
+        }
+        return RevanResponse.ok();
+    }
 
 }

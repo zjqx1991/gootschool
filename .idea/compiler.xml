@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gts-framework-api" />
+        <module name="gts-framework-common" />
         <module name="gts-manage-education" />
         <module name="gts-framework-pojo" />
       </profile>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gootschool" options="-parameters" />
       <module name="gts-framework-api" options="-parameters" />
+      <module name="gts-framework-common" options="-parameters" />
       <module name="gts-framework-pojo" options="-parameters" />
       <module name="gts-manage-education" options="-parameters" />
     </option>
