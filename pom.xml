@@ -11,6 +11,7 @@
     <modules>
         <module>gts-manage-education</module>
         <module>gts-framework-pojo</module>
+        <module>gts-framework-api</module>
     </modules>
 
     <parent>

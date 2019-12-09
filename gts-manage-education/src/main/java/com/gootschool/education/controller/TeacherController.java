@@ -1,6 +1,7 @@
 package com.gootschool.education.controller;
 
 
+import com.gootschool.api.education.IEducationTeacherAPI;
 import com.gootschool.education.service.ITeacherService;
 import com.gootschool.pojo.education.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,27 +19,24 @@ import java.util.List;
  * @since 2019-12-09
  */
 @RestController
-@RequestMapping("/education/teacher")
-public class TeacherController {
+public class TeacherController implements IEducationTeacherAPI {
 
     @Autowired
     private ITeacherService teacherService;
 
-    @GetMapping("/list")
-    public List<Teacher> list() {
-        List<Teacher> list = this.teacherService.list(null);
 
+    @Override
+    public List list() {
+        List<Teacher> list = this.teacherService.list(null);
         for (Teacher teacher : list) {
             System.out.println(teacher);
         }
         return list;
     }
 
-
-    @DeleteMapping("/delete/{id}")
-    public boolean removeById(@PathVariable String id){
-        return teacherService.removeById(id);
+    @Override
+    public boolean removeById(String id) {
+        return false;
     }
-
 }
 
