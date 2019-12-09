@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/config/MyBatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/config/Swagger2Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TeacherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/target/classes/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575874544870</updated>
-      <workItem from="1575874549470" duration="11939000" />
+      <workItem from="1575874549470" duration="12443000" />
     </task>
     <servers />
   </component>
