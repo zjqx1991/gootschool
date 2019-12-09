@@ -17,11 +17,11 @@ public class MyObjectMetaHandler implements MetaObjectHandler {
         // 版本号
         this.setFieldValByName("version", 1, metaObject);
         // 逻辑删除
-        this.setFieldValByName("deleted", 0, metaObject);
+        this.setFieldValByName("deleted", false, metaObject);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.setFieldValByName("gmtModified",new Date(),metaObject);
+//        this.setFieldValByName("gmtModified",new Date(),metaObject);
     }
 }

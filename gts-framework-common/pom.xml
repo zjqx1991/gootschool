@@ -12,7 +12,6 @@
     <artifactId>gts-framework-common</artifactId>
 
 
-
     <dependencies>
         <!--swagger-->
         <dependency>
@@ -22,6 +21,11 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <!--mybatis-plus-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
     </dependencies>

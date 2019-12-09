@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/request/TeacherQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/CommonMetaObjectHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationTeacherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationTeacherAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ITeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" afterDir="false" />
     </list>
@@ -119,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575874544870</updated>
-      <workItem from="1575874549470" duration="21203000" />
+      <workItem from="1575874549470" duration="26690000" />
     </task>
     <servers />
   </component>
@@ -139,5 +142,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

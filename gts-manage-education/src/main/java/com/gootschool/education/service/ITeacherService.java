@@ -38,4 +38,17 @@ public interface ITeacherService extends IService<Teacher> {
      */
     RevanResponse removeByTId(String id);
 
+    /**
+     * 新增讲师
+     * @param teacher
+     * @return
+     */
+    RevanResponse saveOrUpdateTeacher(Teacher teacher);
+
+    /**
+     * 根据id查询讲师
+     * @param id
+     * @return
+     */
+    RevanResponse queryById(String id);
 }

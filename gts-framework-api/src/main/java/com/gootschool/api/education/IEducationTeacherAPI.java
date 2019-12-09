@@ -1,6 +1,7 @@
 package com.gootschool.api.education;
 
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.pojo.education.Teacher;
 import com.gootschool.pojo.education.request.TeacherQuery;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -42,5 +43,21 @@ public interface IEducationTeacherAPI {
     })
     @DeleteMapping("/delete/{id}")
     RevanResponse removeById(@PathVariable("id") String id);
+
+
+    @ApiOperation("讲师新增")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "teacher", value = "讲师对象", required = false),
+    })
+    @PostMapping("/saveOrUpdate")
+    RevanResponse saveOrUpdateTeacher(@RequestBody() Teacher teacher);
+
+
+    @ApiOperation("根据id查询讲师")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "讲师id", required = true, paramType = "path", dataType = "string")
+    })
+    @GetMapping("/{id}")
+    RevanResponse queryById(@PathVariable("id") String id);
 
 }

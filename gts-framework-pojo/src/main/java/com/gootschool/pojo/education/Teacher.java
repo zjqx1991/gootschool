@@ -49,7 +49,8 @@ public class Teacher implements Serializable {
 
     @ApiModelProperty(value = "逻辑删除 1（true）已删除， 0（false）未删除")
     @TableLogic
-    @TableField(value = "is_deleted", fill = FieldFill.INSERT)
+    @TableField(fill = FieldFill.INSERT)
+//    @TableField(value = "is_deleted", fill = FieldFill.INSERT)
     private Boolean deleted;
 
     @ApiModelProperty(value = "创建时间")
@@ -62,7 +63,7 @@ public class Teacher implements Serializable {
 
     @Version
     @TableField(fill = FieldFill.INSERT)
-    private Long version;
+    private int version;
 
 
 

@@ -44,5 +44,15 @@ public class TeacherController implements IEducationTeacherAPI {
     public RevanResponse removeById(@PathVariable("id") String id) {
         return this.teacherService.removeByTId(id);
     }
+
+    @Override
+    public RevanResponse saveOrUpdateTeacher(@RequestBody() Teacher teacher) {
+        return this.teacherService.saveOrUpdateTeacher(teacher);
+    }
+
+    @Override
+    public RevanResponse queryById(@PathVariable("id") String id) {
+        return this.teacherService.queryById(id);
+    }
 }
 

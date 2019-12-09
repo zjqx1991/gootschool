@@ -90,4 +90,32 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
         return RevanResponse.ok();
     }
 
+    @Override
+    public RevanResponse saveOrUpdateTeacher(Teacher teacher) {
+        // 1.新增
+        if (StringUtils.isBlank(teacher.getId())) {
+            int insert = this.baseMapper.insert(teacher);
+            if (insert != 1) {
+                throw new RuntimeException("teach不存在");
+            }
+            return RevanResponse.ok();
+        }
+
+        // 2.更新
+        int update = this.baseMapper.updateById(teacher);
+        if (update != 1) {
+            throw new RuntimeException("teach不存在");
+        }
+        return RevanResponse.ok();
+    }
+
+    @Override
+    public RevanResponse queryById(String id) {
+        Teacher teacher = this.baseMapper.selectById(id);
+        if (teacher == null) {
+            throw new RuntimeException("teach不存在");
+        }
+        return RevanResponse.ok().data("teacher", teacher);
+    }
+
 }
