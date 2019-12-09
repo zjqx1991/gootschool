@@ -32,6 +32,12 @@ public class TeacherController implements IEducationTeacherAPI {
     }
 
     @Override
+    public RevanResponse listPage(@PathVariable("page") Integer page,
+                                  @PathVariable("size") Integer size) {
+        return this.teacherService.listPage(page, size);
+    }
+
+    @Override
     public RevanResponse removeById(@PathVariable("id") String id) {
         return this.teacherService.removeByTId(id);
     }

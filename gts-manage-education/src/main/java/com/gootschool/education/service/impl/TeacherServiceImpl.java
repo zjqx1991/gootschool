@@ -1,5 +1,7 @@
 package com.gootschool.education.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.education.mapper.ITeacherMapper;
 import com.gootschool.education.service.ITeacherService;
@@ -27,6 +29,16 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
             System.out.println(teacher);
         }
         return RevanResponse.ok().data("items", teacherList);
+    }
+
+    @Override
+    public RevanResponse listPage(Integer page, Integer size) {
+        // 创建分页查询对象
+        Page<Teacher> pageParam = new Page<>(page, size);
+        IPage<Teacher> tPage = this.baseMapper.selectPage(pageParam, null);
+        List<Teacher> datas = tPage.getRecords();
+        long total = tPage.getTotal();
+        return RevanResponse.ok().data("total", total).data("items", datas);
     }
 
     @Override

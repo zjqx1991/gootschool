@@ -20,6 +20,16 @@ public interface IEducationTeacherAPI {
     @GetMapping("/list")
     RevanResponse list();
 
+
+    @ApiOperation("讲师分页列表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "页码", required = true, paramType = "path", dataType = "int"),
+            @ApiImplicitParam(name = "size", value = "个数", required = true, paramType = "path", dataType = "int")
+    })
+    @GetMapping("/list/{page}/{size}")
+    RevanResponse listPage(@PathVariable("page") Integer page,
+                           @PathVariable("size") Integer size);
+
     @ApiOperation("讲师删除")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "讲师id", required = true, paramType = "path", dataType = "string")
