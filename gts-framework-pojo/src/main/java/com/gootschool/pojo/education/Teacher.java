@@ -1,7 +1,6 @@
 package com.gootschool.pojo.education;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,7 +19,8 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="TTeacher对象", description="讲师")
+@ApiModel(value="Teacher对象", description="讲师")
+@TableName("t_teacher")
 public class Teacher implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,13 +48,22 @@ public class Teacher implements Serializable {
     private Integer sort;
 
     @ApiModelProperty(value = "逻辑删除 1（true）已删除， 0（false）未删除")
-    private Boolean isDeleted;
+    @TableLogic
+    @TableField(value = "is_deleted", fill = FieldFill.INSERT)
+    private Boolean deleted;
 
     @ApiModelProperty(value = "创建时间")
+    @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
 
     @ApiModelProperty(value = "更新时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
+
+    @Version
+    @TableField(fill = FieldFill.INSERT)
+    private Long version;
+
 
 
 }
