@@ -1,7 +1,7 @@
 package com.gootschool.education.service;
 
-import com.gootschool.education.pojo.TTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.gootschool.pojo.education.Teacher;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Revan Wang
  * @since 2019-12-09
  */
-public interface ITTeacherService extends IService<TTeacher> {
+public interface ITeacherService extends IService<Teacher> {
 
 }

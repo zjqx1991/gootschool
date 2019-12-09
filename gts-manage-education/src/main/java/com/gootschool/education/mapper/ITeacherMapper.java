@@ -1,7 +1,7 @@
 package com.gootschool.education.mapper;
 
-import com.gootschool.education.pojo.TTeacher;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.gootschool.pojo.education.Teacher;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author Revan Wang
  * @since 2019-12-09
  */
-public interface TTeacherMapper extends BaseMapper<TTeacher> {
+public interface ITeacherMapper extends BaseMapper<Teacher> {
 
 }

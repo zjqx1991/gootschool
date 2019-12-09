@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/gts-manage-education.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/gts-framework-pojo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/TTeacherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/ITeacherMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TTeacherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TeacherMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/pojo/TTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ITTeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ITeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TTeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,6 +59,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gootschool.pojo.education" />
       <recent name="com.gootschool.education" />
     </key>
   </component>
@@ -71,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CodeGenerator.run">
     <configuration name="CodeGenerator.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gts-manage-education" />
       <extension name="coverage">
@@ -84,6 +88,13 @@
       <option name="MAIN_CLASS_NAME" value="com.gootschool.education.CodeGenerator" />
       <option name="METHOD_NAME" value="run" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GTSEducationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gts-manage-education" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gootschool.education.GTSEducationApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575874544870</updated>
-      <workItem from="1575874549470" duration="5083000" />
+      <workItem from="1575874549470" duration="5887000" />
     </task>
     <servers />
   </component>

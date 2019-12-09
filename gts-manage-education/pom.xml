@@ -14,6 +14,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.gootschool.gts</groupId>
+            <artifactId>gts-framework-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!--mybatis-plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
