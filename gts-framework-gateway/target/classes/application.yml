@@ -1,0 +1,62 @@
+server:
+  port: 10010
+  servlet:
+    context-path: /api # 添加路由前缀
+spring:
+  application:
+    name: gts-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+#    registry-fetch-interval-seconds: 5
+#  instance:
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1
+#    instance-id: ${spring.application.name}:${server.port}
+#zuul:
+zuul:
+  routes:
+    manage-education:
+      path: /education/**
+      serviceId: gts-manage-education #微服务名称，网关会从Eureka中获取该微服务名称下的服务实例地址
+      # 例子：将请求转发到http://localhost:31200/course
+      #url: http://www.baidu.com #也可指定url，此url也可以是外网地址\
+      strip-prefix: false #true：代理转发时去掉前缀，false:代理转发时不去掉前缀
+      sensitiveHeaders:  #默认zuul会屏蔽cookie，cookie不会传到下游服务，这里设置为空则取消默认的黑名单，如果设置了具体的头信息则不会传到下游服务
+      #   ignoredHeaders: 默认为空表示不过虑任何头
+
+    manage-service-cms:
+      path: /cms/**  #cms
+      serviceId: xc-manage-service-cms #微服务名称，网关会从Eureka中获取该微服务名称下的服务实例地址
+      # 例子：将请求转发到http://localhost:31200/course
+      #url: http://www.baidu.com #也可指定url，此url也可以是外网地址\
+      strip-prefix: false #true：代理转发时去掉前缀，false:代理转发时不去掉前缀
+      sensitiveHeaders:  #默认zuul会屏蔽cookie，cookie不会传到下游服务，这里设置为空则取消默认的黑名单，如果设置了具体的头信息则不会传到下游服务
+      #   ignoredHeaders: 默认为空表示不过虑任何头
+    manage-service-teach:
+      path: /teach/**
+      serviceId: xc-manage-service-teach
+      strip-prefix: false
+      sensitiveHeaders:
+
+    service-base-filesystem:
+      path: /fileupload/**
+      serviceId: xc-service-base-filesystem
+      strip-prefix: false
+      sensitiveHeaders:
+
+ribbon:
+  ConnectTimeout: 1000 # 连接超时时间(ms)
+  ReadTimeout: 3500 # 通信超时时间(ms)
+  MaxAutoRetries: 0 # 同一实例的重试次数
+  MaxAutoRetriesNextServer: 0 # 同一服务不同实例的重试次数
+#  OkToRetryOnAllOperations: true # 是否对所有操作重试
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 5000 # 熔断超时时长：5000ms
+
