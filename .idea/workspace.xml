@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/utils/RevanExceptionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-api/target/classes/META-INF/gts-framework-api.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationTeacherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationTeacherAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ITeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +59,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gootschool.api.education" />
       <recent name="com.gootschool.common.handler" />
       <recent name="com.gootschool.education.handler" />
       <recent name="com.gootschool.pojo.education" />
@@ -124,6 +126,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575874544870</updated>
       <workItem from="1575874549470" duration="26690000" />
+      <workItem from="1575992628875" duration="11459000" />
     </task>
     <servers />
   </component>
@@ -135,7 +138,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

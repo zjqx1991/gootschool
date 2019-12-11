@@ -9,9 +9,6 @@ import com.gootschool.pojo.education.request.TeacherQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
-import java.util.List;
-
 /**
  * <p>
  * 讲师 前端控制器
@@ -53,6 +50,16 @@ public class TeacherController implements IEducationTeacherAPI {
     @Override
     public RevanResponse queryById(@PathVariable("id") String id) {
         return this.teacherService.queryById(id);
+    }
+
+    @Override
+    public RevanResponse login() {
+        return this.teacherService.login();
+    }
+
+    @Override
+    public RevanResponse userinfo() {
+        return this.teacherService.userinfo();
     }
 }
 

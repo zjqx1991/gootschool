@@ -120,4 +120,15 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
         return RevanResponse.ok().data("teacher", teacher);
     }
 
+    @Override
+    public RevanResponse login() {
+        return RevanResponse.ok();
+    }
+
+    @Override
+    public RevanResponse userinfo() {
+        return RevanResponse.ok().data("roles", "admin");
+    }
+
+
 }

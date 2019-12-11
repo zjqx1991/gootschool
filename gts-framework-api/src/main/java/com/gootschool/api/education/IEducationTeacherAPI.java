@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(value = "讲师管理", description = "讲师管理，提供讲师的增、删、改、查")
 @RequestMapping("/education/teacher")
+@CrossOrigin
 public interface IEducationTeacherAPI {
 
     @ApiOperation("讲师列表")
@@ -21,6 +22,7 @@ public interface IEducationTeacherAPI {
 
     /**
      * RequestBody json类型数据必须使用 POST
+     *
      * @param page
      * @param size
      * @param teacherQuery
@@ -50,7 +52,7 @@ public interface IEducationTeacherAPI {
             @ApiImplicitParam(name = "teacher", value = "讲师对象", required = false),
     })
     @PostMapping("/saveOrUpdate")
-    RevanResponse saveOrUpdateTeacher(@RequestBody() Teacher teacher);
+    RevanResponse saveOrUpdateTeacher(@RequestBody Teacher teacher);
 
 
     @ApiOperation("根据id查询讲师")
@@ -60,4 +62,13 @@ public interface IEducationTeacherAPI {
     @GetMapping("/{id}")
     RevanResponse queryById(@PathVariable("id") String id);
 
+
+    @ApiOperation("管理员登录")
+    @PostMapping("/login")
+    RevanResponse login();
+
+
+    @ApiOperation("管理员登录")
+    @GetMapping("/userinfo")
+    RevanResponse userinfo();
 }

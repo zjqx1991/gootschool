@@ -51,4 +51,14 @@ public interface ITeacherService extends IService<Teacher> {
      * @return
      */
     RevanResponse queryById(String id);
+
+    /**
+     * 管理员登录
+     */
+    RevanResponse login();
+
+    /**
+     * 管理员用户信息
+     */
+    RevanResponse userinfo();
 }
