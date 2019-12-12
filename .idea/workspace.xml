@@ -2,17 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/gts-service-upload.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/GTSUploadApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/config/AliOSSProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/test/java/com/gootschool/upload/alioss/AliOssTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gootschool.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/upload/IUploadAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/config/Swagger2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/controller/GTSUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/service/IUploadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/service/impl/UploadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-api/gts-framework-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-api/target/classes/META-INF/gts-framework-api.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-common/gts-framework-common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-common/target/classes/META-INF/gts-framework-common.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/gts-framework-pojo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-register-center/gts-framework-register-center.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/gts-manage-education.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/gts-service-upload.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/GTSUploadApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/GTSUploadApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/config/AliOSSProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/config/AliOSSProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/test/java/com/gootschool/upload/alioss/AliOssTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -57,7 +75,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-service-oss/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -65,18 +83,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gootschool.oss" />
       <recent name="com.gootschool.upload.config" />
+      <recent name="com.gootschool.api.upload" />
       <recent name="com.gootschool.register.center" />
       <recent name="com.gootschool.gateway.config" />
-      <recent name="com.gootschool.api.education" />
-      <recent name="com.gootschool.common.handler" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gts-service-oss/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-service-upload/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-framework-register-center/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-framework-register-center/src/main/java/com/gootschool/register/center" />
       <recent name="$PROJECT_DIR$/gts-framework-gateway/src/main/resources" />
-      <recent name="$PROJECT_DIR$/gts-manage-education/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -96,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AliOssTest.uploadFile">
+  <component name="RunManager" selected="Spring Boot.GTSUploadApplication">
     <configuration name="AliOssTest.createStroage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gts-service-upload" />
       <extension name="coverage">
@@ -124,22 +142,6 @@
       <option name="PACKAGE_NAME" value="com.gootschool.upload.alioss" />
       <option name="MAIN_CLASS_NAME" value="com.gootschool.upload.alioss.AliOssTest" />
       <option name="METHOD_NAME" value="uploadFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CodeGenerator.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gts-manage-education" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.gootschool.education.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.gootschool.education" />
-      <option name="MAIN_CLASS_NAME" value="com.gootschool.education.CodeGenerator" />
-      <option name="METHOD_NAME" value="run" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,27 +189,27 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.GTSGateWayApplication" />
+        <item itemvalue="Spring Boot.GTSRegisterCenterApplication" />
         <item itemvalue="JUnit.AliOssTest.uploadFile" />
         <item itemvalue="JUnit.AliOssTest.createStroage" />
-        <item itemvalue="Spring Boot.GTSRegisterCenterApplication" />
-        <item itemvalue="Spring Boot.GTSGateWayApplication" />
-        <item itemvalue="JUnit.CodeGenerator.run" />
       </list>
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
+        <option name="contentProportion" value="0.32047245" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ed5b8b52" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@843040e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ed5b8b52" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@76f4cf4e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@843040e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@10bfdbc8" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -233,7 +235,8 @@
       <updated>1575874544870</updated>
       <workItem from="1575874549470" duration="26690000" />
       <workItem from="1575992628875" duration="12014000" />
-      <workItem from="1576070426578" duration="19630000" />
+      <workItem from="1576070426578" duration="23930000" />
+      <workItem from="1576142432435" duration="6508000" />
     </task>
     <servers />
   </component>

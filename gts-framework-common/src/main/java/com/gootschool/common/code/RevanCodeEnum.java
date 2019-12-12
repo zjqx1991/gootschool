@@ -8,6 +8,10 @@ public enum RevanCodeEnum {
     SUCCESS(true, 0, "成功"),
     FAIL(false, 500, "系统错误"),
     PARAM_FAIL(false, 1, "参数错误"),
+
+    // 上传文件
+    UPLOAD_FAIL(false, 1, "参数错误"),
+
     ;
 
     private Boolean success;

@@ -1,7 +1,5 @@
 server:
   port: 10010
-  servlet:
-    context-path: /api # 添加路由前缀
 spring:
   application:
     name: gts-gateway
@@ -24,32 +22,19 @@ eureka:
 # sensitiveHeaders:  #默认zuul会屏蔽cookie，cookie不会传到下游服务，这里设置为空则取消默认的黑名单，如果设置了具体的头信息则不会传到下游服务
 # ignoredHeaders: 默认为空表示不过虑任何头
 zuul:
+  prefix: /api # 添加路由前缀
+  retryable: true
   routes:
-    manage-education:
+    manage-education: # 讲师微服务
       path: /education/**
       serviceId: gts-manage-education
       strip-prefix: false
       sensitiveHeaders:
 
-#    manage-service-cms:
-#      path: /cms/**  #cms
-#      serviceId: xc-manage-service-cms #微服务名称，网关会从Eureka中获取该微服务名称下的服务实例地址
-#      # 例子：将请求转发到http://localhost:31200/course
-#      #url: http://www.baidu.com #也可指定url，此url也可以是外网地址\
-#      strip-prefix: false #true：代理转发时去掉前缀，false:代理转发时不去掉前缀
-#      sensitiveHeaders:  #默认zuul会屏蔽cookie，cookie不会传到下游服务，这里设置为空则取消默认的黑名单，如果设置了具体的头信息则不会传到下游服务
-#      #   ignoredHeaders: 默认为空表示不过虑任何头
-#    manage-service-teach:
-#      path: /teach/**
-#      serviceId: xc-manage-service-teach
-#      strip-prefix: false
-#      sensitiveHeaders:
-#
-#    service-base-filesystem:
-#      path: /fileupload/**
-#      serviceId: xc-service-base-filesystem
-#      strip-prefix: false
-#      sensitiveHeaders:
+    service-upload: # 上传微服务
+      path: /upload/**
+      serviceId: gts-service-upload
+      strip-prefix: false
 
 ribbon:
   ConnectTimeout: 1000 # 连接超时时间(ms)

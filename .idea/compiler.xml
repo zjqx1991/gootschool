@@ -11,11 +11,14 @@
         <module name="gts-manage-education" />
         <module name="gts-framework-gateway" />
         <module name="gts-framework-common" />
-        <module name="gts-framework-api" />
-        <module name="gts-framework-register-center" />
         <module name="gts-framework-pojo" />
+        <module name="gts-framework-register-center" />
+        <module name="gts-framework-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gts-service-oss" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -26,6 +29,7 @@
       <module name="gts-framework-pojo" options="-parameters" />
       <module name="gts-framework-register-center" options="-parameters" />
       <module name="gts-manage-education" options="-parameters" />
+      <module name="gts-service-oss" options="-parameters" />
       <module name="gts-service-upload" options="-parameters" />
     </option>
   </component>

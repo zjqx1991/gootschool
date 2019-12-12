@@ -16,6 +16,7 @@
         <module>gts-framework-gateway</module>
         <module>gts-framework-register-center</module>
         <module>gts-service-upload</module>
+        <module>gts-service-oss</module>
     </modules>
 
     <parent>

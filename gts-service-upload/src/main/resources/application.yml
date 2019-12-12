@@ -1,5 +1,5 @@
 server:
-  port: 60002
+  port: 8002
 spring:
   application:
     name: gts-service-upload
@@ -16,4 +16,6 @@ aliyun:
     accessKeyId: LTAI4FuTT8bymiPEARsB4NAg
     accessKeySecret: 2vmHrQd4QieOuy5BZ1qor5TqKwwJ7c
     bucketName: gootschool
+    fileHost: avatar
+
 
