@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(value = "讲师管理", description = "讲师管理，提供讲师的增、删、改、查")
 @RequestMapping("/education/teacher")
-@CrossOrigin
 public interface IEducationTeacherAPI {
 
     @ApiOperation("讲师列表")

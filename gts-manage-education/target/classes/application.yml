@@ -1,9 +1,10 @@
 server:
-  port: 8001
+  port: 60001
 spring:
-  application: gts-manage-education
+  application:
+    name: gts-manage-education
   #profiles: # 环境设置：dev、test、prod
-   # active: dev
+  # active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1/gootschool?useSSL=true&serverTimezone=UTC
@@ -16,6 +17,14 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+
 mybatis-plus: #打印 SQL 语句
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

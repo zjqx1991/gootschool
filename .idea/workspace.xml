@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/java/com/gootschool/gateway/GTSGateWayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/java/com/gootschool/gateway/config/GlobalCorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-register-center/gts-framework-register-center.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-register-center/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-register-center/src/main/java/com/gootschool/register/center/GTSRegisterCenterApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-register-center/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-register-center/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationTeacherAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationTeacherAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/GTSEducationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +62,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-framework-gateway/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-framework-register-center/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -62,13 +70,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gootschool.register.center" />
       <recent name="com.gootschool.gateway.config" />
       <recent name="com.gootschool.api.education" />
       <recent name="com.gootschool.common.handler" />
       <recent name="com.gootschool.education.handler" />
-      <recent name="com.gootschool.pojo.education" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gts-framework-register-center/src/main/resources" />
+      <recent name="$PROJECT_DIR$/gts-framework-register-center/src/main/java/com/gootschool/register/center" />
       <recent name="$PROJECT_DIR$/gts-framework-gateway/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-manage-education/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler" />
@@ -91,7 +101,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GTSGateWayApplication">
+  <component name="RunManager" selected="Spring Boot.GTSRegisterCenterApplication">
     <configuration name="CodeGenerator.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gts-manage-education" />
       <extension name="coverage">
@@ -128,8 +138,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GTSRegisterCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gts-framework-register-center" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gootschool.register.center.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gootschool.register.center.GTSRegisterCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.GTSRegisterCenterApplication" />
         <item itemvalue="Spring Boot.GTSGateWayApplication" />
         <item itemvalue="JUnit.CodeGenerator.run" />
       </list>
@@ -170,7 +194,7 @@
       <updated>1575874544870</updated>
       <workItem from="1575874549470" duration="26690000" />
       <workItem from="1575992628875" duration="12014000" />
-      <workItem from="1576070426578" duration="3942000" />
+      <workItem from="1576070426578" duration="15195000" />
     </task>
     <servers />
   </component>
@@ -200,6 +224,11 @@
           <url>file://$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java</url>
           <line>13</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

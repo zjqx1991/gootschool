@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gts-framework-gateway" />
-        <module name="gts-framework-api" />
-        <module name="gts-framework-common" />
         <module name="gts-manage-education" />
+        <module name="gts-framework-gateway" />
+        <module name="gts-framework-common" />
+        <module name="gts-framework-api" />
+        <module name="gts-framework-register-center" />
         <module name="gts-framework-pojo" />
       </profile>
     </annotationProcessing>
@@ -22,6 +23,7 @@
       <module name="gts-framework-common" options="-parameters" />
       <module name="gts-framework-gateway" options="-parameters" />
       <module name="gts-framework-pojo" options="-parameters" />
+      <module name="gts-framework-register-center" options="-parameters" />
       <module name="gts-manage-education" options="-parameters" />
     </option>
   </component>
