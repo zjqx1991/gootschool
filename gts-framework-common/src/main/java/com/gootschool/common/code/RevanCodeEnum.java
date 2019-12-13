@@ -13,6 +13,9 @@ public enum RevanCodeEnum {
     UPLOAD_FAIL(false, 1, "参数错误"),
     UPLOAD_EXCEL_FAIL(false, 1, "Excel数据导入错误"),
 
+    // 课程
+    SUBJECT_NOT_DELETE(false, 1, "存在子分类，请删除子分类"),
+
     ;
 
     private Boolean success;

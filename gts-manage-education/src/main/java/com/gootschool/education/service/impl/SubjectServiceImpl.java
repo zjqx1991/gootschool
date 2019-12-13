@@ -135,6 +135,35 @@ public class SubjectServiceImpl extends ServiceImpl<ISubjectMapper, Subject> imp
         return RevanResponse.ok().data("items", items);
     }
 
+    @Override
+    public RevanResponse deleteSubjectById(String id) {
+
+        List<Subject> list = getSubSubjectByParentId(id);
+        // 有子分类不能删除
+        if (list.size() != 0) {
+            throw new RevanException(RevanCodeEnum.SUBJECT_NOT_DELETE);
+        }
+        int i = baseMapper.deleteById(id);
+        if (i == 0) {
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+        return RevanResponse.ok();
+    }
+
+
+    /**
+     * 通过父id查询子分类
+     * @param pid
+     * @return
+     */
+    private List<Subject> getSubSubjectByParentId(String pid) {
+
+        QueryWrapper<Subject> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("parent_id", pid);
+        List<Subject> subjects = baseMapper.selectList(queryWrapper);
+        return subjects;
+    }
+
 
     /**
      * 保存 subject

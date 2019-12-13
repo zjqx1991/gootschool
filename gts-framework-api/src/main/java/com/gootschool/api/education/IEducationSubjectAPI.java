@@ -19,4 +19,9 @@ public interface IEducationSubjectAPI {
     @GetMapping("/list")
     RevanResponse nestedList();
 
+
+    @ApiOperation("删除课程")
+    @DeleteMapping("/delete/{id}")
+    RevanResponse deleteSubjectById(@PathVariable("id") String id);
+
 }

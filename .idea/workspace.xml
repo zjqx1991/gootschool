@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationSubjectAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/utils/ExcelImportHSSFUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/SubjectNestedVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/SubjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/ISubjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TSubjectMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ISubjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationSubjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationSubjectAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/SubjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ISubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ISubjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +229,7 @@
       <workItem from="1575874549470" duration="26690000" />
       <workItem from="1575992628875" duration="12014000" />
       <workItem from="1576070426578" duration="23930000" />
-      <workItem from="1576142432435" duration="20986000" />
+      <workItem from="1576142432435" duration="24245000" />
     </task>
     <servers />
   </component>
