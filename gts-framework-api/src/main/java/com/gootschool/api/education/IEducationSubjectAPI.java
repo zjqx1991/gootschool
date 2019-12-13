@@ -1,13 +1,13 @@
 package com.gootschool.api.education;
 
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.pojo.education.Subject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-
-@Api(value = "科目管理", description = "科目通过Excel导入")
+@Api(value = "课程科目管理", description = "课程科目管理，提供增、删、改、查")
 @RequestMapping("/education/subject")
 public interface IEducationSubjectAPI {
 
@@ -18,6 +18,10 @@ public interface IEducationSubjectAPI {
     @ApiOperation("嵌套数据列表")
     @GetMapping("/list")
     RevanResponse nestedList();
+
+    @ApiOperation("保存课程")
+    @PostMapping("/save")
+    RevanResponse saveSubject(@RequestBody Subject subject);
 
 
     @ApiOperation("删除课程")

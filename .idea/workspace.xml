@@ -2,12 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationCourseAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/constant/CourseConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Cascader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/CascaderSubject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/CourseDescription.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/request/CourseInfoForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/ICourseDescriptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/ICourseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TCourseDescriptionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/xml/TCourseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseDescriptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseDescriptionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationSubjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationSubjectAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/SubjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/handler/MyObjectMetaHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ISubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ISubjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/test/java/com/gootschool/education/CodeGenerator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +69,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -66,11 +84,11 @@
       <recent name="com.gootschool.api.upload" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education" />
       <recent name="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/utils" />
       <recent name="$PROJECT_DIR$/gts-service-oss/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-service-upload/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-framework-register-center/src/main/resources" />
-      <recent name="$PROJECT_DIR$/gts-framework-register-center/src/main/java/com/gootschool/register/center" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -181,9 +199,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GTSRegisterCenterApplication" />
-        <item itemvalue="Spring Boot.GTSGateWayApplication" />
         <item itemvalue="JUnit.CodeGenerator.run" />
+        <item itemvalue="Spring Boot.GTSGateWayApplication" />
+        <item itemvalue="Spring Boot.GTSRegisterCenterApplication" />
         <item itemvalue="JUnit.AliOssTest.uploadFile" />
         <item itemvalue="JUnit.AliOssTest.createStroage" />
       </list>
@@ -229,7 +247,7 @@
       <workItem from="1575874549470" duration="26690000" />
       <workItem from="1575992628875" duration="12014000" />
       <workItem from="1576070426578" duration="23930000" />
-      <workItem from="1576142432435" duration="24245000" />
+      <workItem from="1576142432435" duration="39754000" />
     </task>
     <servers />
   </component>
@@ -259,6 +277,11 @@
           <url>file://$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/handler/GlobalExceptionHandler.java</url>
           <line>13</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseServiceImpl.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -8,6 +8,8 @@ import com.gootschool.common.utils.ExcelImportHSSFUtil;
 import com.gootschool.education.mapper.ISubjectMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gootschool.education.service.ISubjectService;
+import com.gootschool.pojo.education.Cascader;
+import com.gootschool.pojo.education.CascaderSubject;
 import com.gootschool.pojo.education.Subject;
 import com.gootschool.pojo.education.SubjectNestedVO;
 import org.apache.commons.lang.StringUtils;
@@ -100,6 +102,7 @@ public class SubjectServiceImpl extends ServiceImpl<ISubjectMapper, Subject> imp
     public RevanResponse nestedList() {
         // 最终得到数据列表
         List<SubjectNestedVO> items = new ArrayList<>();
+        List<CascaderSubject> cascaderSubjects = new ArrayList<>();
 
         // 1.获取一级分类数据
         QueryWrapper<Subject> queryWrapper = new QueryWrapper<>();
@@ -119,22 +122,53 @@ public class SubjectServiceImpl extends ServiceImpl<ISubjectMapper, Subject> imp
             BeanUtils.copyProperties(subject, nestedVO);
             items.add(nestedVO);
 
+            CascaderSubject cascader1 = new CascaderSubject();
+            cascader1.setLabel(nestedVO.getTitle());
+            cascader1.setValue(nestedVO.getId());
+            cascaderSubjects.add(cascader1);
+
             // 4.填充二级分类数据
             List<SubjectNestedVO> nestedVOS2 = new ArrayList<>();
+            List<Cascader> cascadersChild = new ArrayList<>();
+
             for (Subject subject2 : subjects2) {
                 if (subject.getId().equals(subject2.getParentId())) {
                     // 创建二级类别VO对象
                     SubjectNestedVO subjectVO2 = new SubjectNestedVO();
                     BeanUtils.copyProperties(subject2, subjectVO2);
                     nestedVOS2.add(subjectVO2);
+
+                    Cascader cascader2 = new Cascader();
+                    cascader2.setLabel(subjectVO2.getTitle());
+                    cascader2.setValue(subjectVO2.getId());
+                    cascadersChild.add(cascader2);
                 }
             }
             nestedVO.setChildren(nestedVOS2);
+            cascader1.setChildren(cascadersChild);
         }
 
-        return RevanResponse.ok().data("items", items);
+        return RevanResponse.ok().data("items", items)
+                .data("cascader", cascaderSubjects);
     }
 
+    @Transactional
+    @Override
+    public RevanResponse saveSubject(Subject subject) {
+        // 查询数据库中是否存在
+        Subject querySub = getSubByTitle(subject.getTitle(), subject.getParentId());
+        if (querySub != null) {
+            throw new RevanException(RevanCodeEnum.SUBJECT_SAVEED);
+        }
+        // 保存
+        int insert = baseMapper.insert(subject);
+        if (insert == 0) {
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+        return RevanResponse.ok().data("subject", subject);
+    }
+
+    @Transactional
     @Override
     public RevanResponse deleteSubjectById(String id) {
 

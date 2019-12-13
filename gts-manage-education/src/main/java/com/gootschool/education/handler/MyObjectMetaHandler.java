@@ -16,7 +16,7 @@ public class MyObjectMetaHandler
         // 更新时间
         this.setFieldValByName("gmtModified",new Date(),metaObject);
         // 版本号
-        this.setFieldValByName("version", 1, metaObject);
+        this.setFieldValByName("version", 1L, metaObject);
         // 逻辑删除
         this.setFieldValByName("deleted", false, metaObject);
     }

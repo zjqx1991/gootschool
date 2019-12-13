@@ -25,7 +25,7 @@ public class CodeGenerator {
     @Test
     public void run() {
 
-        String tableName = "t_subject";
+        String tableName = "t_course_description";
 
         // 1、创建代码生成器
         AutoGenerator mpg = new AutoGenerator();

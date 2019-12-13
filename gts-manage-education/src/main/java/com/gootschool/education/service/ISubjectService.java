@@ -29,9 +29,17 @@ public interface ISubjectService extends IService<Subject> {
     RevanResponse nestedList();
 
     /**
+     * 增加课程
+     * @param subject
+     * @return
+     */
+    RevanResponse saveSubject(Subject subject);
+
+    /**
      * 删除课程
      * @param id 课程id
      * @return
      */
     RevanResponse deleteSubjectById(String id);
+
 }

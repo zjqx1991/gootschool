@@ -5,8 +5,10 @@ package com.gootschool.education.controller;
 import com.gootschool.api.education.IEducationSubjectAPI;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.education.service.ISubjectService;
+import com.gootschool.pojo.education.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,6 +32,11 @@ public class SubjectController implements IEducationSubjectAPI {
     @Override
     public RevanResponse nestedList() {
         return this.subjectService.nestedList();
+    }
+
+    @Override
+    public RevanResponse saveSubject(@RequestBody Subject subject) {
+        return this.subjectService.saveSubject(subject);
     }
 
     @Override
