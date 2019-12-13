@@ -11,6 +11,7 @@ public enum RevanCodeEnum {
 
     // 上传文件
     UPLOAD_FAIL(false, 1, "参数错误"),
+    UPLOAD_EXCEL_FAIL(false, 1, "Excel数据导入错误"),
 
     ;
 

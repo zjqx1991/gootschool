@@ -40,6 +40,8 @@
         <io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
         <mysql.connector.version>8.0.18</mysql.connector.version>
         <com.aliyun.oss.version>3.8.0</com.aliyun.oss.version>
+        <poi.version>3.9</poi.version>
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
     </properties>
 
     <dependencyManagement>
@@ -113,6 +115,25 @@
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${com.aliyun.oss.version}</version>
+            </dependency>
+
+            <!--xls-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!--xlsx-->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <!--文件上传-->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
             </dependency>
 
         </dependencies>

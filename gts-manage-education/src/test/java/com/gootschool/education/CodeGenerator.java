@@ -25,6 +25,8 @@ public class CodeGenerator {
     @Test
     public void run() {
 
+        String tableName = "t_subject";
+
         // 1、创建代码生成器
         AutoGenerator mpg = new AutoGenerator();
 
@@ -65,7 +67,7 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("t_teacher");//设置要映射的表名
+        strategy.setInclude(tableName);//设置要映射的表名
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
