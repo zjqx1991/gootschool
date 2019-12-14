@@ -88,7 +88,8 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
     private List<Course> existCourse(CourseInfoForm courseInfoForm) {
         QueryWrapper<Course> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("teacher_id", courseInfoForm.getTeacherId())
-                .eq("subject_id", courseInfoForm.getSubjectId())
+                .eq("subject_id1", courseInfoForm.getSubjectId1())
+                .eq("subject_id2", courseInfoForm.getSubjectId2())
                 .eq("title", courseInfoForm.getTitle());
         List<Course> courses = this.baseMapper.selectList(queryWrapper);
         return courses;

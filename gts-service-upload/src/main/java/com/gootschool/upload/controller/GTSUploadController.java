@@ -4,6 +4,7 @@ import com.gootschool.api.upload.IUploadAPI;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.upload.service.IUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,8 +15,8 @@ public class GTSUploadController implements IUploadAPI {
     private IUploadService uploadService;
 
     @Override
-    public RevanResponse upload(MultipartFile file) {
-        return this.uploadService.upload(file);
+    public RevanResponse upload(MultipartFile file, @RequestParam(value = "hostName", required = false) String hostName) {
+        return this.uploadService.upload(file, hostName);
     }
 
 }

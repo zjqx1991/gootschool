@@ -63,7 +63,7 @@ public class Teacher implements Serializable {
 
     @Version
     @TableField(fill = FieldFill.INSERT)
-    private int version;
+    private Long version;
 
 
 

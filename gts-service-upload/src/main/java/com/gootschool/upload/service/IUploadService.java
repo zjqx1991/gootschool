@@ -10,5 +10,5 @@ public interface IUploadService {
      * @param file
      * @return
      */
-    RevanResponse upload(MultipartFile file);
+    RevanResponse upload(MultipartFile file, String hostName);
 }

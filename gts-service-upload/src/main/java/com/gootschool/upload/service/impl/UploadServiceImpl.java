@@ -9,6 +9,7 @@ import com.gootschool.common.response.RevanResponse;
 import com.gootschool.upload.config.AliOSSProperties;
 import com.gootschool.upload.service.IUploadService;
 import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -28,7 +29,7 @@ public class UploadServiceImpl implements IUploadService {
     private AliOSSProperties aliOSSProperties;
 
     @Override
-    public RevanResponse upload(MultipartFile file) {
+    public RevanResponse upload(MultipartFile file, String hostName) {
         // Endpoint以杭州为例，其它Region请按实际情况填写。
         String endpoint = this.aliOSSProperties.getEndpoint();
         // 云账号AccessKey有所有API访问权限，建议遵循阿里云安全最佳实践，创建并使用RAM子账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建。
@@ -59,6 +60,9 @@ public class UploadServiceImpl implements IUploadService {
             String fileName = UUID.randomUUID().toString();
             String fileType = originalFilename.substring(originalFilename.lastIndexOf("."));
             String newName = fileName + fileType;
+            if (StringUtils.isNotBlank(hostName)) {
+                fileHost = hostName;
+            }
             String fileUrl = fileHost + "/" + filePath + "/" + newName;
 
             // 文件上传到阿里云
