@@ -1,6 +1,6 @@
-package com.gootschool.common.constant;
+package com.gootschool.common.constants;
 
-public class CourseConstant {
+public class CourseConstants {
     public static final String COURSE_DRAFT = "Draft";
     public static final String COURSE_NORMAL = "Normal";
 }

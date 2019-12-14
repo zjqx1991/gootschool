@@ -39,40 +39,36 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
     @Override
     public RevanResponse listPage(Integer page, Integer size, TeacherQuery teacherQuery) {
 
+        // 查询条件
+        QueryWrapper<Teacher> queryWrapper = null;
 
-        // 1.没有查询条件
-        if (teacherQuery == null) {
-            // 创建分页查询对象
-            Page<Teacher> pageParam = new Page<>(page, size);
-            IPage<Teacher> tPage = this.baseMapper.selectPage(pageParam, null);
-            List<Teacher> datas = tPage.getRecords();
-            long total = tPage.getTotal();
-            return RevanResponse.ok().data("total", total).data("items", datas);
-        }
+        // 查询条件
+        if (teacherQuery != null) {
 
-        // 2.有查询条件
-        QueryWrapper<Teacher> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByAsc("sort");
+            queryWrapper =  new QueryWrapper<>();
+            queryWrapper.orderByAsc("sort");
 
-        String name = teacherQuery.getName();
-        Integer level = teacherQuery.getLevel();
-        String begin = teacherQuery.getBegin();
-        String end = teacherQuery.getEnd();
+            String name = teacherQuery.getName();
+            Integer level = teacherQuery.getLevel();
+            String begin = teacherQuery.getBegin();
+            String end = teacherQuery.getEnd();
 
-        if (StringUtils.isNotBlank(name)) {
-            queryWrapper.likeRight("name", name);
-        }
+            if (StringUtils.isNotBlank(name)) {
+                queryWrapper.likeRight("name", name);
+            }
 
-        if (level != null) {
-            queryWrapper.eq("level", level);
-        }
+            if (level != null) {
+                queryWrapper.eq("level", level);
+            }
 
-        if (StringUtils.isNotBlank(begin)) {
-            queryWrapper.ge("gmt_create", begin);
-        }
+            if (StringUtils.isNotBlank(begin)) {
+                queryWrapper.ge("gmt_create", begin);
+            }
 
-        if (StringUtils.isNotBlank(end)) {
-            queryWrapper.le("gmt_create", end);
+            if (StringUtils.isNotBlank(end)) {
+                queryWrapper.le("gmt_create", end);
+            }
+
         }
 
         // 创建分页查询对象
