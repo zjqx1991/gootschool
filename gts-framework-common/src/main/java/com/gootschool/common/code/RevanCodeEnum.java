@@ -21,6 +21,9 @@ public enum RevanCodeEnum {
     COURSE_SAVE_FAIL(false, 1, "课程信息保存失败"),
     COURSE_UPDATE_FAIL(false, 1, "课程信息更新失败"),
 
+    // 课程章节
+    CHAPTER_SAVE_FAIL(false, 1, "课程章节保存失败"),
+    CHAPTER_UPDATE_FAIL(false, 1, "课程章节更新失败"),
 
     ;
 
