@@ -3,6 +3,7 @@ package com.gootschool.education.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.pojo.education.Course;
+import com.gootschool.pojo.education.dto.CoursePublishVO;
 import com.gootschool.pojo.education.request.CourseInfoForm;
 import com.gootschool.pojo.education.request.CourseQuery;
 
@@ -39,4 +40,17 @@ public interface ICourseService extends IService<Course> {
     RevanResponse getCourseInfoFormById(String id);
 
 
+    /**
+     * 发布课程
+     * @param courseId
+     * @return
+     */
+    RevanResponse publishCourse(String courseId);
+
+    /**
+     * 通过课程id获取发布时课程显示详情
+     * @param courseId
+     * @return
+     */
+    RevanResponse courseInfo(String courseId);
 }

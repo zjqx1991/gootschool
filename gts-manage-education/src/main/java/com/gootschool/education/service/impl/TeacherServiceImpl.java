@@ -82,7 +82,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
     @Override
     public RevanResponse removeByTId(String id) {
         int delete = this.baseMapper.deleteById(id);
-        if (delete != 1) {
+        if (delete == 0) {
             throw new RevanException(RevanCodeEnum.PARAM_FAIL);
         }
         return RevanResponse.ok();
@@ -93,7 +93,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
         // 1.新增
         if (StringUtils.isBlank(teacher.getId())) {
             int insert = this.baseMapper.insert(teacher);
-            if (insert != 1) {
+            if (insert == 0) {
                 throw new RevanException(RevanCodeEnum.PARAM_FAIL);
             }
             return RevanResponse.ok();
@@ -101,7 +101,7 @@ public class TeacherServiceImpl extends ServiceImpl<ITeacherMapper, Teacher> imp
 
         // 2.更新
         int update = this.baseMapper.updateById(teacher);
-        if (update != 1) {
+        if (update == 0) {
             throw new RevanException(RevanCodeEnum.PARAM_FAIL);
         }
         return RevanResponse.ok();

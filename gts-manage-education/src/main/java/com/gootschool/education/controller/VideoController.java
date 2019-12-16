@@ -1,21 +1,36 @@
 package com.gootschool.education.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.gootschool.api.education.IEducationVideoAPI;
+import com.gootschool.common.response.RevanResponse;
+import com.gootschool.education.service.IVideoService;
+import com.gootschool.pojo.education.Video;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * <p>
  * 课程视频 前端控制器
- * </p>
  *
  * @author Revan Wang
  * @since 2019-12-15
  */
 @RestController
-@RequestMapping("/education/t-video")
-public class VideoController {
+public class VideoController implements IEducationVideoAPI {
 
+    @Autowired
+    private IVideoService videoService;
+
+    @Override
+    public RevanResponse saveOrUpdateVideo(@RequestBody Video video) {
+        return videoService.saveOrUpdateVideo(video);
+    }
+
+    @Override
+    public RevanResponse deleteVideoByVideoid(@PathVariable("videoId") String videoId) {
+        return videoService.deleteVideoByVideoid(videoId);
+    }
 }
 

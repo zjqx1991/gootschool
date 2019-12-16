@@ -14,6 +14,7 @@ import com.gootschool.education.mapper.ICourseMapper;
 import com.gootschool.education.service.ICourseService;
 import com.gootschool.pojo.education.Course;
 import com.gootschool.pojo.education.CourseDescription;
+import com.gootschool.pojo.education.dto.CoursePublishVO;
 import com.gootschool.pojo.education.request.CourseInfoForm;
 import com.gootschool.pojo.education.request.CourseQuery;
 import org.apache.commons.lang3.StringUtils;
@@ -143,6 +144,33 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
         }
 
         return RevanResponse.ok().data("courseInfo", courseInfoForm);
+    }
+
+    @Override
+    public RevanResponse publishCourse(String courseId) {
+        if (StringUtils.isBlank(courseId)) {
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+        Course course = baseMapper.selectById(courseId);
+        course.setStatus("normal");
+        int update = baseMapper.updateById(course);
+        if (update == 0) {
+            throw new RevanException(RevanCodeEnum.COURSE_PUBLISH_FAIL);
+        }
+        return RevanResponse.ok().message("课程发布成功").data("course", course);
+    }
+
+
+    @Override
+    public RevanResponse courseInfo(String courseId) {
+        if (StringUtils.isBlank(courseId)) {
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+
+        // 获取课程发布详情
+        CoursePublishVO coursePublishVO = baseMapper.coursePublishInfo(courseId);
+
+        return RevanResponse.ok().data("coursePublish", coursePublishVO);
     }
 
     /**

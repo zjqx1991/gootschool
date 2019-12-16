@@ -33,5 +33,10 @@ public class ChapterController implements IEducationChapterAPI {
     public RevanResponse saveOrUpdateChapter(@RequestBody Chapter chapter) {
         return chapterService.saveOrUpdateChapter(chapter);
     }
+
+    @Override
+    public RevanResponse deleteChapterByChapterid(@PathVariable("chapterId") String chapterId) {
+        return chapterService.deleteChapterByChapterid(chapterId);
+    }
 }
 

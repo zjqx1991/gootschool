@@ -11,7 +11,7 @@ import com.gootschool.education.service.ISubjectService;
 import com.gootschool.pojo.education.Cascader;
 import com.gootschool.pojo.education.CascaderSubject;
 import com.gootschool.pojo.education.Subject;
-import com.gootschool.pojo.education.SubjectNestedVO;
+import com.gootschool.pojo.education.dto.SubjectNestedVO;
 import org.apache.commons.lang.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;

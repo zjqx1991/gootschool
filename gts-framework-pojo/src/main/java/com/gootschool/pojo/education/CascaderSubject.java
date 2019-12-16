@@ -1,5 +1,6 @@
 package com.gootschool.pojo.education;
 
+import com.gootschool.pojo.education.Cascader;
 import lombok.Data;
 
 import java.util.ArrayList;

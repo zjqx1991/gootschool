@@ -29,5 +29,10 @@ public interface IEducationChapterAPI {
     RevanResponse saveOrUpdateChapter(@RequestBody Chapter chapter);
 
 
+    @ApiOperation("根据章节id删除章节")
+    @PostMapping("/delete/{chapterId}")
+    RevanResponse deleteChapterByChapterid(@PathVariable("chapterId") String chapterId);
+
+
 
 }

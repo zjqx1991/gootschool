@@ -25,4 +25,11 @@ public interface IChapterService extends IService<Chapter> {
      * @return
      */
     RevanResponse saveOrUpdateChapter(Chapter chapter);
+
+    /**
+     * 删除章节
+     * @param chapterId
+     * @return
+     */
+    RevanResponse deleteChapterByChapterid(String chapterId);
 }

@@ -1,9 +1,9 @@
 package com.gootschool.api.education;
 
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.pojo.education.dto.CoursePublishVO;
 import com.gootschool.pojo.education.request.CourseInfoForm;
 import com.gootschool.pojo.education.request.CourseQuery;
-import com.gootschool.pojo.education.request.TeacherQuery;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -39,5 +39,13 @@ public interface IEducationCourseAPI {
     RevanResponse saveOrUpdateCourse(@RequestBody CourseInfoForm courseInfoForm);
 
 
+    @ApiOperation("课程详情")
+    @GetMapping("/info/{courseId}")
+    RevanResponse courseInfo(@PathVariable("courseId") String courseId);
+
+
+    @ApiOperation("发布课程")
+    @GetMapping("/publish/{courseId}")
+    RevanResponse publishCourse(@PathVariable("courseId") String courseId);
 
 }

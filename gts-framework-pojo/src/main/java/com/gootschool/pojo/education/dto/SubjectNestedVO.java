@@ -1,4 +1,4 @@
-package com.gootschool.pojo.education;
+package com.gootschool.pojo.education.dto;
 
 import lombok.Getter;
 import lombok.Setter;

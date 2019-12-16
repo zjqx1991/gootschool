@@ -9,9 +9,9 @@ import com.gootschool.education.service.IChapterService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gootschool.education.service.IVideoService;
 import com.gootschool.pojo.education.Chapter;
-import com.gootschool.pojo.education.ChapterVO;
+import com.gootschool.pojo.education.dto.ChapterVO;
 import com.gootschool.pojo.education.Video;
-import com.gootschool.pojo.education.VideoVO;
+import com.gootschool.pojo.education.dto.VideoVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -42,7 +41,8 @@ public class ChapterServiceImpl extends ServiceImpl<IChapterMapper, Chapter> imp
         // 1.课程章节列表
         List<Chapter> chapterList = baseMapper.selectList(queryWrapper);
         if (CollectionUtils.isEmpty(chapterList)) {
-            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+            // 没有内容
+            return RevanResponse.ok();
         }
 
         // 2.课程小节列表
@@ -83,17 +83,31 @@ public class ChapterServiceImpl extends ServiceImpl<IChapterMapper, Chapter> imp
         // 保存
         if (StringUtils.isBlank(chapter.getId())) {
             int insert = baseMapper.insert(chapter);
-            if (insert != 1) {
+            if (insert == 0) {
                 throw new RevanException(RevanCodeEnum.CHAPTER_SAVE_FAIL);
             }
         }
         else {
             int update = baseMapper.updateById(chapter);
-            if (update != 1) {
+            if (update == 0) {
                 throw new RevanException(RevanCodeEnum.CHAPTER_UPDATE_FAIL);
             }
         }
 
         return RevanResponse.ok().data("chapter", chapter);
+    }
+
+    @Transactional
+    @Override
+    public RevanResponse deleteChapterByChapterid(String chapterId) {
+
+        // 1.删除章节
+        int i = baseMapper.deleteById(chapterId);
+        if (i == 0) {
+            throw new RevanException(RevanCodeEnum.CHAPTER_REMOVE_FAIL);
+        }
+
+        // 2.删除章节中小节
+        return this.videoService.deleteVideoByChapterId(chapterId);
     }
 }
