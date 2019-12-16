@@ -38,6 +38,9 @@ public interface IEducationCourseAPI {
     @PostMapping("/saveOrUpdate")
     RevanResponse saveOrUpdateCourse(@RequestBody CourseInfoForm courseInfoForm);
 
+    @ApiOperation("删除课程")
+    @GetMapping("/delete/{courseId}")
+    RevanResponse deleteCourse(@PathVariable("courseId") String courseId);
 
     @ApiOperation("课程详情")
     @GetMapping("/info/{courseId}")

@@ -9,20 +9,29 @@ import com.gootschool.common.constants.CourseConstants;
 import com.gootschool.common.constants.PriceConstants;
 import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.education.mapper.IChapterMapper;
 import com.gootschool.education.mapper.ICourseDescriptionMapper;
 import com.gootschool.education.mapper.ICourseMapper;
+import com.gootschool.education.mapper.IVideoMapper;
+import com.gootschool.education.service.IChapterService;
+import com.gootschool.education.service.ICourseDescriptionService;
 import com.gootschool.education.service.ICourseService;
+import com.gootschool.education.service.IVideoService;
+import com.gootschool.pojo.education.Chapter;
 import com.gootschool.pojo.education.Course;
 import com.gootschool.pojo.education.CourseDescription;
+import com.gootschool.pojo.education.Video;
 import com.gootschool.pojo.education.dto.CoursePublishVO;
 import com.gootschool.pojo.education.request.CourseInfoForm;
 import com.gootschool.pojo.education.request.CourseQuery;
+import com.netflix.discovery.converters.Auto;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.util.StringUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -38,7 +47,10 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
 
     @Autowired
     private ICourseDescriptionMapper courseDescriptionMapper;
-
+    @Autowired
+    private IVideoMapper videoMapper;
+    @Autowired
+    private IChapterMapper chapterMapper;
 
     @Override
     public RevanResponse courseList(Integer page, Integer size, CourseQuery courseQuery) {
@@ -171,6 +183,57 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
         CoursePublishVO coursePublishVO = baseMapper.coursePublishInfo(courseId);
 
         return RevanResponse.ok().data("coursePublish", coursePublishVO);
+    }
+
+    @Transactional
+    @Override
+    public RevanResponse deleteCourse(String courseId) {
+        if (StringUtils.isBlank(courseId)) {
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+        // 1.删除小节
+        this.deleteVideoByCourseId(courseId);
+        // 2.删除章节
+        this.deleteChapterByCourseId(courseId);
+        // 3.删除课程详情
+        this.courseDescriptionMapper.deleteById(courseId);
+        int delete = baseMapper.deleteById(courseId);
+        if (delete == 0) {
+            throw new RevanException(RevanCodeEnum.COURSE_REMOVE_FAIL);
+        }
+        return RevanResponse.ok().message("课程删除成功");
+    }
+
+    /**
+     * 根据课程id删除章节
+     * @param courseId
+     */
+    private void deleteChapterByCourseId(String courseId) {
+        QueryWrapper<Chapter> wrapper = new QueryWrapper<>();
+        wrapper.eq("course_id", courseId);
+        List<Chapter> chapters = this.chapterMapper.selectList(wrapper);
+        if (!CollectionUtils.isEmpty(chapters)) {
+            int delete = this.chapterMapper.delete(wrapper);
+            if (delete == 0) {
+                throw new RevanException(RevanCodeEnum.CHAPTER_REMOVE_FAIL);
+            }
+        }
+    }
+
+    /**
+     * 根据课程id删除小节
+     * @param courseId
+     */
+    private void deleteVideoByCourseId(String courseId) {
+        QueryWrapper<Video> videoWrapper = new QueryWrapper<>();
+        videoWrapper.eq("course_id", courseId);
+        List<Video> videos = this.videoMapper.selectList(videoWrapper);
+        if (!CollectionUtils.isEmpty(videos)) {
+            int video = this.videoMapper.delete(videoWrapper);
+            if (video == 0) {
+                throw new RevanException(RevanCodeEnum.VIDEO_REMOVE_FAIL);
+            }
+        }
     }
 
     /**

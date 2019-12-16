@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationVideoAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/dto/CoursePublishVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationChapterAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationChapterAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationCourseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationCourseAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-common/src/main/java/com/gootschool/common/code/RevanCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/CascaderSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/CascaderSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/ChapterVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/dto/ChapterVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/SubjectNestedVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/dto/SubjectNestedVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/VideoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/dto/VideoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/ChapterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/ChapterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/VideoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/ICourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/mapper/ICourseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/IChapterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/IChapterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/IVideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/IVideoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/ChapterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/ChapterServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/SubjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/TeacherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/VideoServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +230,7 @@
       <workItem from="1575992628875" duration="12014000" />
       <workItem from="1576070426578" duration="23930000" />
       <workItem from="1576142432435" duration="58159000" />
-      <workItem from="1576378188503" duration="24638000" />
+      <workItem from="1576378188503" duration="27355000" />
     </task>
     <servers />
   </component>

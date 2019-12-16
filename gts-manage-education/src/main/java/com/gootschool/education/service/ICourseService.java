@@ -53,4 +53,11 @@ public interface ICourseService extends IService<Course> {
      * @return
      */
     RevanResponse courseInfo(String courseId);
+
+    /**
+     * 删除课程
+     * @param courseId
+     * @return
+     */
+    RevanResponse deleteCourse(String courseId);
 }

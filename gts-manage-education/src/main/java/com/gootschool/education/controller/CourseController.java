@@ -43,6 +43,11 @@ public class CourseController implements IEducationCourseAPI {
     }
 
     @Override
+    public RevanResponse deleteCourse(@PathVariable("courseId") String courseId) {
+        return this.courseService.deleteCourse(courseId);
+    }
+
+    @Override
     public RevanResponse courseInfo(@PathVariable("courseId") String courseId) {
         return this.courseService.courseInfo(courseId);
     }
