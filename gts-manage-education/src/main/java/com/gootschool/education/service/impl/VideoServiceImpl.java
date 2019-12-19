@@ -4,15 +4,19 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.gootschool.common.code.RevanCodeEnum;
 import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.education.client.IVideoClient;
 import com.gootschool.education.mapper.IVideoMapper;
 import com.gootschool.education.service.IVideoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gootschool.pojo.education.Video;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +28,8 @@ import java.util.List;
 @Service
 public class VideoServiceImpl extends ServiceImpl<IVideoMapper, Video> implements IVideoService {
 
+    @Autowired
+    private IVideoClient videoClient;
 
     @Override
     public RevanResponse saveOrUpdateVideo(Video video) {
@@ -51,8 +57,15 @@ public class VideoServiceImpl extends ServiceImpl<IVideoMapper, Video> implement
         return RevanResponse.ok().data("video", videoNew);
     }
 
+    @Transactional
     @Override
     public RevanResponse deleteVideoByVideoid(String videoId) {
+
+        List<String> videos = new ArrayList<>();
+        videos.add(videoId);
+        // 删除视频
+        RevanResponse response = this.videoClient.deleteVideoByVideoIds(videos);
+
         int delete = baseMapper.deleteById(videoId);
         if (delete == 0) {
             throw new RevanException(RevanCodeEnum.VIDEO_REMOVE_FAIL);
@@ -60,6 +73,7 @@ public class VideoServiceImpl extends ServiceImpl<IVideoMapper, Video> implement
         return RevanResponse.ok();
     }
 
+    @Transactional
     @Override
     public RevanResponse deleteVideoByChapterId(String chapterId) {
 
@@ -71,7 +85,14 @@ public class VideoServiceImpl extends ServiceImpl<IVideoMapper, Video> implement
         if (CollectionUtils.isEmpty(videos)) {
             return RevanResponse.ok();
         }
-        // 1.TODO 删除阿里云视频
+        // 1.删除阿里云视频
+        List<String> list = new ArrayList<>();
+        for (Video video : videos) {
+            if (StringUtils.isNotBlank(video.getVideoSourceId())) {
+                list.add(video.getVideoSourceId());
+            }
+        }
+        RevanResponse revanResponse = this.videoClient.deleteVideoByVideoIds(list);
 
         // 2.删除小节
         int delete = baseMapper.delete(wrapper);

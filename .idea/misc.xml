@@ -12,7 +12,10 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/gts-service-aliyun-vod/pom.xml" />
         <option value="$PROJECT_DIR$/gts-service-oss/pom.xml" />
+        <option value="$PROJECT_DIR$/gts-service-video/pom.xml" />
+        <option value="$PROJECT_DIR$/gts-service-vod/pom.xml" />
       </set>
     </option>
   </component>

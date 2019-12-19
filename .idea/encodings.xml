@@ -8,7 +8,8 @@
     <file url="file://$PROJECT_DIR$/gts-framework-pojo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gts-framework-register-center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gts-manage-education" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gts-service-oss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gts-service-upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gts-service-video" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gts-service-vod" charset="UTF-8" />
   </component>
 </project>

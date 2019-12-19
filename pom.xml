@@ -16,7 +16,6 @@
         <module>gts-framework-gateway</module>
         <module>gts-framework-register-center</module>
         <module>gts-service-upload</module>
-        <module>gts-service-oss</module>
     </modules>
 
     <parent>
@@ -40,6 +39,11 @@
         <io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
         <mysql.connector.version>8.0.18</mysql.connector.version>
         <com.aliyun.oss.version>3.8.0</com.aliyun.oss.version>
+        <com.aliyun.core.version>4.3.3</com.aliyun.core.version>
+        <com.aliyun.vod.version>2.15.2</com.aliyun.vod.version>
+        <com.alibaba.fastjson.version>1.2.28</com.alibaba.fastjson.version>
+        <org.json.version>20170516</org.json.version>
+        <com.google.gson.version>2.8.2</com.google.gson.version>
         <poi.version>3.9</poi.version>
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
     </properties>
@@ -116,7 +120,36 @@
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${com.aliyun.oss.version}</version>
             </dependency>
-
+            <!--阿里云Core-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${com.aliyun.core.version}</version>
+            </dependency>
+            <!--阿里云Vod-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-vod</artifactId>
+                <version>${com.aliyun.vod.version}</version>
+            </dependency>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com.alibaba.fastjson.version}</version>
+            </dependency>
+            <!--json-->
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${org.json.version}</version>
+            </dependency>
+            <!--gson-->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${com.google.gson.version}</version>
+            </dependency>
             <!--xls-->
             <dependency>
                 <groupId>org.apache.poi</groupId>

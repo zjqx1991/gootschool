@@ -9,6 +9,7 @@ import com.gootschool.common.constants.CourseConstants;
 import com.gootschool.common.constants.PriceConstants;
 import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
+import com.gootschool.education.client.IVideoClient;
 import com.gootschool.education.mapper.IChapterMapper;
 import com.gootschool.education.mapper.ICourseDescriptionMapper;
 import com.gootschool.education.mapper.ICourseMapper;
@@ -34,6 +35,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,6 +53,8 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
     private IVideoMapper videoMapper;
     @Autowired
     private IChapterMapper chapterMapper;
+    @Autowired
+    private IVideoClient videoClient;
 
     @Override
     public RevanResponse courseList(Integer page, Integer size, CourseQuery courseQuery) {
@@ -228,6 +232,15 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
         QueryWrapper<Video> videoWrapper = new QueryWrapper<>();
         videoWrapper.eq("course_id", courseId);
         List<Video> videos = this.videoMapper.selectList(videoWrapper);
+        // 1.删除阿里云视频
+        List<String> list = new ArrayList<>();
+        for (Video video : videos) {
+            if (StringUtils.isNotBlank(video.getVideoSourceId())) {
+                list.add(video.getVideoSourceId());
+            }
+        }
+        RevanResponse revanResponse = this.videoClient.deleteVideoByVideoIds(list);
+
         if (!CollectionUtils.isEmpty(videos)) {
             int video = this.videoMapper.delete(videoWrapper);
             if (video == 0) {

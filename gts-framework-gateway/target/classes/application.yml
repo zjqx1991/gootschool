@@ -30,7 +30,6 @@ zuul:
       serviceId: gts-manage-education
       strip-prefix: false
       sensitiveHeaders:
-
     service-upload: # 上传微服务
       path: /upload/**
       serviceId: gts-service-upload

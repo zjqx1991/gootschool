@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 
 @Api(value = "文件上传", description = "文件上传管理")
 @RequestMapping("/upload")
@@ -19,5 +21,15 @@ public interface IUploadAPI {
             @ApiImplicitParam(name = "hostName", value = "存储目录")
     )
     RevanResponse upload(MultipartFile file, @RequestParam(value = "hostName", required = false) String hostName);
+
+
+    @ApiOperation("上传视频文件")
+    @PostMapping("/video")
+    RevanResponse uploadVideo(MultipartFile file);
+
+
+    @ApiOperation("删除视频文件")
+    @PostMapping("/delete")
+    RevanResponse deleteVideoByVideoIds(@RequestParam("videoIds") List<String> videoIds);
 
 }

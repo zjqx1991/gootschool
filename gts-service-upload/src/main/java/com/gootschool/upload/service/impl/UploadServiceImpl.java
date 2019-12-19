@@ -3,12 +3,18 @@ package com.gootschool.upload.service.impl;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.model.CannedAccessControlList;
+import com.aliyun.vod.upload.impl.UploadVideoImpl;
+import com.aliyun.vod.upload.req.UploadStreamRequest;
+import com.aliyun.vod.upload.resp.UploadStreamResponse;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
+import com.aliyuncs.vod.model.v20170321.DeleteVideoResponse;
 import com.gootschool.common.code.RevanCodeEnum;
 import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.upload.config.AliOSSProperties;
 import com.gootschool.upload.service.IUploadService;
-import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
+import com.gootschool.upload.utils.AliyunVodClient;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +22,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -80,5 +85,47 @@ public class UploadServiceImpl implements IUploadService {
         }
 
         return RevanResponse.ok().data("url", uploadUrl);
+    }
+
+    @Override
+    public RevanResponse uploadVideo(MultipartFile file) {
+        try {
+            //获取上传文件名称
+            //视频名称.mp4
+            String fileName = file.getOriginalFilename();
+            String title = fileName.substring(0, fileName.lastIndexOf("."));
+            String accessKeyId = this.aliOSSProperties.getAccessKeyId();
+            String accessKeySecret = this.aliOSSProperties.getAccessKeySecret();
+            UploadStreamRequest request = new UploadStreamRequest(accessKeyId, accessKeySecret,
+                    title, fileName, file.getInputStream());
+            UploadVideoImpl uploader = new UploadVideoImpl();
+            UploadStreamResponse response = uploader.uploadStream(request);
+            String videoId = null;
+            if (response.isSuccess()) {
+                videoId = response.getVideoId();
+            } else { //如果设置回调URL无效，不影响视频上传，可以返回VideoId同时会返回错误码。其他情况上传失败时，VideoId为空，此时需要根据返回错误码分析具体错误原因
+                videoId = response.getVideoId();
+            }
+            return RevanResponse.ok().data("videoId", videoId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+    }
+
+    @Override
+    public RevanResponse deleteVideoByVideoIds(List<String> videoIds) {
+        try {
+            DefaultAcsClient client = AliyunVodClient.initVodClient(this.aliOSSProperties.getAccessKeyId(),
+                    this.aliOSSProperties.getAccessKeySecret());
+            DeleteVideoRequest request = new DeleteVideoRequest();
+            String videos = StringUtils.join(videoIds.toArray(), ",");
+            request.setVideoIds(videos);
+            DeleteVideoResponse response = client.getAcsResponse(request);
+            return RevanResponse.ok().data("response", response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
     }
 }
