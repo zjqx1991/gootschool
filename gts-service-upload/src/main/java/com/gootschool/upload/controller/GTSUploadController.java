@@ -32,4 +32,14 @@ public class GTSUploadController implements IUploadAPI {
         return this.uploadService.deleteVideoByVideoIds(videoIds);
     }
 
+    @Override
+    public RevanResponse deleteVideoById(@PathVariable("videoId") String videoId) {
+        return this.uploadService.deleteVideoById(videoId);
+    }
+
+    @Override
+    public RevanResponse fetchVideoInfoById(@PathVariable("videoId") String videoId) {
+        return this.uploadService.fetchVideoInfoById(videoId);
+    }
+
 }

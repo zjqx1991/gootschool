@@ -9,6 +9,8 @@ import com.aliyun.vod.upload.resp.UploadStreamResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
 import com.aliyuncs.vod.model.v20170321.DeleteVideoResponse;
+import com.aliyuncs.vod.model.v20170321.GetVideoInfoRequest;
+import com.aliyuncs.vod.model.v20170321.GetVideoInfoResponse;
 import com.gootschool.common.code.RevanCodeEnum;
 import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
@@ -22,6 +24,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.UUID;
@@ -96,6 +100,7 @@ public class UploadServiceImpl implements IUploadService {
             String title = fileName.substring(0, fileName.lastIndexOf("."));
             String accessKeyId = this.aliOSSProperties.getAccessKeyId();
             String accessKeySecret = this.aliOSSProperties.getAccessKeySecret();
+
             UploadStreamRequest request = new UploadStreamRequest(accessKeyId, accessKeySecret,
                     title, fileName, file.getInputStream());
             UploadVideoImpl uploader = new UploadVideoImpl();
@@ -113,6 +118,7 @@ public class UploadServiceImpl implements IUploadService {
         }
     }
 
+
     @Override
     public RevanResponse deleteVideoByVideoIds(List<String> videoIds) {
         try {
@@ -123,6 +129,41 @@ public class UploadServiceImpl implements IUploadService {
             request.setVideoIds(videos);
             DeleteVideoResponse response = client.getAcsResponse(request);
             return RevanResponse.ok().data("response", response);
+        }
+        catch (com.aliyuncs.exceptions.ClientException e) {
+            return RevanResponse.ok().message("视频已删除");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+    }
+
+    @Override
+    public RevanResponse deleteVideoById(String videoId) {
+        try {
+            DefaultAcsClient client = AliyunVodClient.initVodClient(this.aliOSSProperties.getAccessKeyId(),
+                    this.aliOSSProperties.getAccessKeySecret());
+            DeleteVideoRequest request = new DeleteVideoRequest();
+            request.setVideoIds(videoId);
+            DeleteVideoResponse response = client.getAcsResponse(request);
+            return RevanResponse.ok().data("response", response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+    }
+
+    @Override
+    public RevanResponse fetchVideoInfoById(String videoId) {
+        try {
+            DefaultAcsClient client = AliyunVodClient.initVodClient(this.aliOSSProperties.getAccessKeyId(),
+                    this.aliOSSProperties.getAccessKeySecret());
+
+            GetVideoInfoRequest request = new GetVideoInfoRequest();
+            request.setVideoId(videoId);
+            GetVideoInfoResponse response = client.getAcsResponse(request);
+            return RevanResponse.ok().data("videoInfo", response);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RevanException(RevanCodeEnum.PARAM_FAIL);

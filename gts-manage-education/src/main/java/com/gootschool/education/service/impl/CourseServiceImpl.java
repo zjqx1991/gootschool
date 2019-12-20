@@ -210,6 +210,7 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
 
     /**
      * 根据课程id删除章节
+     *
      * @param courseId
      */
     private void deleteChapterByCourseId(String courseId) {
@@ -226,6 +227,7 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
 
     /**
      * 根据课程id删除小节
+     *
      * @param courseId
      */
     private void deleteVideoByCourseId(String courseId) {
@@ -239,7 +241,9 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
                 list.add(video.getVideoSourceId());
             }
         }
-        RevanResponse revanResponse = this.videoClient.deleteVideoByVideoIds(list);
+        if (!CollectionUtils.isEmpty(list)) {
+            RevanResponse revanResponse = this.videoClient.deleteVideoByVideoIds(list);
+        }
 
         if (!CollectionUtils.isEmpty(videos)) {
             int video = this.videoMapper.delete(videoWrapper);

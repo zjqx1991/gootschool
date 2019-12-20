@@ -31,5 +31,5 @@ public interface IVideoService extends IService<Video> {
      * @param videoId
      * @return
      */
-    RevanResponse deleteVideoByVideoid(String videoId);
+    RevanResponse deleteVideoByVideoId(String videoId);
 }

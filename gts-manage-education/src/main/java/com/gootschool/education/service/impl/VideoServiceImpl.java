@@ -1,5 +1,6 @@
 package com.gootschool.education.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.gootschool.common.code.RevanCodeEnum;
 import com.gootschool.common.handler.RevanException;
@@ -59,14 +60,17 @@ public class VideoServiceImpl extends ServiceImpl<IVideoMapper, Video> implement
 
     @Transactional
     @Override
-    public RevanResponse deleteVideoByVideoid(String videoId) {
+    public RevanResponse deleteVideoByVideoId(String videoId) {
 
         List<String> videos = new ArrayList<>();
         videos.add(videoId);
         // 删除视频
         RevanResponse response = this.videoClient.deleteVideoByVideoIds(videos);
 
-        int delete = baseMapper.deleteById(videoId);
+
+        QueryWrapper<Video> wrapper = new QueryWrapper<>();
+        wrapper.eq("video_source_id", videoId);
+        int delete = baseMapper.delete(wrapper);
         if (delete == 0) {
             throw new RevanException(RevanCodeEnum.VIDEO_REMOVE_FAIL);
         }

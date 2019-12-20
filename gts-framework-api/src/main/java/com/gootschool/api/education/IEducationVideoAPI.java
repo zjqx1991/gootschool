@@ -23,7 +23,7 @@ public interface IEducationVideoAPI {
 
     @ApiOperation("根据小节id删除章节")
     @PostMapping("/delete/{videoId}")
-    RevanResponse deleteVideoByVideoid(@PathVariable("videoId") String videoId);
+    RevanResponse deleteVideoByVideoId(@PathVariable("videoId") String videoId);
 
 
 

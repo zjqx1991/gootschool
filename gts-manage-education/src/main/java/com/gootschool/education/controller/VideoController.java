@@ -29,8 +29,8 @@ public class VideoController implements IEducationVideoAPI {
     }
 
     @Override
-    public RevanResponse deleteVideoByVideoid(@PathVariable("videoId") String videoId) {
-        return videoService.deleteVideoByVideoid(videoId);
+    public RevanResponse deleteVideoByVideoId(@PathVariable("videoId") String videoId) {
+        return videoService.deleteVideoByVideoId(videoId);
     }
 }
 

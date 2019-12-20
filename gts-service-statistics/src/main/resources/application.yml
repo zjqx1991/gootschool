@@ -1,8 +1,8 @@
 server:
-  port: 8001
+  port: 8004
 spring:
   application:
-    name: gts-manage-education
+    name: gts-manage-statistics
   #profiles: # 环境设置：dev、test、prod
   # active: dev
   datasource:
