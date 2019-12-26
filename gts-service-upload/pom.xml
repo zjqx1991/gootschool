@@ -71,11 +71,11 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-sdk-vod-upload</artifactId>
-            <version>1.4.11</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.aliyun</groupId>-->
+<!--            <artifactId>aliyun-sdk-vod-upload</artifactId>-->
+<!--            <version>1.4.11</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
