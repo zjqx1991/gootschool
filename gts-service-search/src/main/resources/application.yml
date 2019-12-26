@@ -1,0 +1,17 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: gts-service-search
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.1.110:9300
+
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+

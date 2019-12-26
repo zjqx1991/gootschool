@@ -1,41 +1,32 @@
-package com.gootschool.pojo.education;
+package com.gootschool.pojo.search;
 
 import com.baomidou.mybatisplus.annotation.*;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- * <p>
- * 课程
- * </p>
- *
- * @author Revan Wang
- * @since 2019-12-13
- */
 @Data
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-@ApiModel(value="TCourse对象", description="课程")
-@TableName("t_course")
-public class Course implements Serializable {
+@Document(indexName = "goods", type = "docs", shards = 1, replicas = 0)
+public class Goods implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "课程ID")
-    @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "课程讲师ID")
-    private String teacherId;
+    @ApiModelProperty(value = "搜索关键词")
+    @Field(type = FieldType.Text, analyzer = "ik_max_word")
+    private String searchWord;
+
+    @ApiModelProperty(value = "课程讲师名称")
+    private String teacherName;
 
     @ApiModelProperty(value = "课程专业一级ID")
     private String subjectId1;
@@ -65,9 +56,6 @@ public class Course implements Serializable {
     @Version
     private Long version;
 
-    @ApiModelProperty(value = "视频状态 Draft未发布  Normal已发布")
-    private String status;
-
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
@@ -75,6 +63,4 @@ public class Course implements Serializable {
     @ApiModelProperty(value = "更新时间")
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date gmtModified;
-
-
 }

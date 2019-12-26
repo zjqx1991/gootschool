@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/search/Goods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/gts-service-search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/GTSSearchApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/client/ISearchCourseClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/dao/IGoodsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-search/src/test/java/com/gootschool/search/IndexTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-service-upload/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/education/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -66,7 +79,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-service-statistics/src/main/java/com/gootschool/statistics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-service-search/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -77,18 +90,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gootschool.pojo.search" />
       <recent name="com.gootschool.pojo.statistics" />
       <recent name="com.gootschool.statistics" />
       <recent name="com.gootschool.pojo.usercenter" />
       <recent name="com.gootschool.usercenter.generator" />
-      <recent name="com.gootschool.upload.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gts-service-search/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-service-statistics/src/main/java/com/gootschool/statistics" />
       <recent name="$PROJECT_DIR$/gts-service-statistics/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-service-usercenter/src/main/java/com/gootschool/usercenter/handler" />
       <recent name="$PROJECT_DIR$/gts-service-usercenter/src/main/java/com/gootschool/usercenter/config" />
-      <recent name="$PROJECT_DIR$/gts-service-usercenter/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -108,34 +121,34 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UploadTest.testUploadStream">
-    <configuration name="CodeGenerator.run (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gts-service-statistics" />
+  <component name="RunManager" selected="JUnit.IndexTest.loadData">
+    <configuration name="IndexTest.createIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gts-service-search" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.gootschool.statistics.*" />
+          <option name="PATTERN" value="com.gootschool.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.gootschool.statistics" />
-      <option name="MAIN_CLASS_NAME" value="com.gootschool.statistics.CodeGenerator" />
-      <option name="METHOD_NAME" value="run" />
+      <option name="PACKAGE_NAME" value="com.gootschool.search" />
+      <option name="MAIN_CLASS_NAME" value="com.gootschool.search.IndexTest" />
+      <option name="METHOD_NAME" value="createIndex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeGenerator.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gts-service-usercenter" />
+    <configuration name="IndexTest.loadData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gts-service-search" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.gootschool.usercenter.generator.*" />
+          <option name="PATTERN" value="com.gootschool.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.gootschool.usercenter.generator" />
-      <option name="MAIN_CLASS_NAME" value="com.gootschool.usercenter.generator.CodeGenerator" />
-      <option name="METHOD_NAME" value="run" />
+      <option name="PACKAGE_NAME" value="com.gootschool.search" />
+      <option name="MAIN_CLASS_NAME" value="com.gootschool.search.IndexTest" />
+      <option name="METHOD_NAME" value="loadData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,6 +191,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GTSSearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gts-service-search" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gootschool.search.GTSSearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GTSStatisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="gts-service-statistics" />
       <extension name="coverage">
@@ -212,8 +232,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CodeGenerator.run" />
-      <item itemvalue="JUnit.CodeGenerator.run (1)" />
       <item itemvalue="JUnit.UploadTest.testUploadStream" />
       <item itemvalue="Spring Boot.GTSEducationApplication" />
       <item itemvalue="Spring Boot.GTSGateWayApplication" />
@@ -221,14 +239,17 @@
       <item itemvalue="Spring Boot.GTSUploadApplication" />
       <item itemvalue="Spring Boot.GTSUserCenterApplication" />
       <item itemvalue="Spring Boot.GTSStatisticsApplication" />
+      <item itemvalue="Spring Boot.GTSSearchApplication" />
+      <item itemvalue="JUnit.IndexTest.createIndex" />
+      <item itemvalue="JUnit.IndexTest.loadData" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GTSStatisticsApplication" />
+        <item itemvalue="JUnit.IndexTest.loadData" />
         <item itemvalue="Spring Boot.GTSUserCenterApplication" />
+        <item itemvalue="Spring Boot.GTSStatisticsApplication" />
+        <item itemvalue="JUnit.IndexTest.createIndex" />
         <item itemvalue="JUnit.UploadTest.testUploadStream" />
-        <item itemvalue="JUnit.CodeGenerator.run (1)" />
-        <item itemvalue="JUnit.CodeGenerator.run" />
       </list>
     </recent_temporary>
   </component>
@@ -245,11 +266,17 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.36463225" />
           <treeState>
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f56a7386" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f56a7386" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@860809ca" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />

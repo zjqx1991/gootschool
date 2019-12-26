@@ -18,6 +18,7 @@
         <module>gts-service-upload</module>
         <module>gts-service-usercenter</module>
         <module>gts-service-statistics</module>
+        <module>gts-service-search</module>
     </modules>
 
     <parent>
