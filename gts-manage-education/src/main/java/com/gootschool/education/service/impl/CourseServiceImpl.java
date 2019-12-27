@@ -209,6 +209,15 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
         return RevanResponse.ok().message("课程删除成功");
     }
 
+    @Override
+    public RevanResponse getCourseById(String courseId) {
+        Course course = baseMapper.selectById(courseId);
+        if (course == null) {
+            throw new RevanException(RevanCodeEnum.PARAM_FAIL);
+        }
+        return RevanResponse.ok().data("course", course);
+    }
+
     /**
      * 根据课程id删除章节
      *

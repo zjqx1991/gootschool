@@ -18,4 +18,12 @@ public interface ISearchGoodsService {
      * @return
      */
     RevanResponse queryCourseList(SearchRequest searchRequest);
+
+
+    /**
+     * 获取课程详情
+     * @param courseId
+     * @return
+     */
+    RevanResponse courseInfo(String courseId);
 }

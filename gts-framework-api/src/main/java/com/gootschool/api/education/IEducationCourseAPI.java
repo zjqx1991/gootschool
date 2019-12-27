@@ -51,4 +51,8 @@ public interface IEducationCourseAPI {
     @GetMapping("/publish/{courseId}")
     RevanResponse publishCourse(@PathVariable("courseId") String courseId);
 
+    @ApiOperation("获取课程-返回Course")
+    @GetMapping("/{courseId}")
+    RevanResponse getCourseById(@PathVariable("courseId") String courseId);
+
 }

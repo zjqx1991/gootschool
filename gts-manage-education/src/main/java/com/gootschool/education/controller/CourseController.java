@@ -55,5 +55,10 @@ public class CourseController implements IEducationCourseAPI {
     public RevanResponse publishCourse(@PathVariable("courseId") String courseId) {
         return this.courseService.publishCourse(courseId);
     }
+
+    @Override
+    public RevanResponse getCourseById(@PathVariable("courseId") String courseId) {
+        return this.courseService.getCourseById(courseId);
+    }
 }
 

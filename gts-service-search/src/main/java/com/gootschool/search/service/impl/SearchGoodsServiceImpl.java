@@ -3,13 +3,13 @@ package com.gootschool.search.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.gootschool.common.response.RevanResponse;
 import com.gootschool.pojo.education.Course;
+import com.gootschool.pojo.education.CourseDescription;
 import com.gootschool.pojo.education.Subject;
 import com.gootschool.pojo.education.Teacher;
+import com.gootschool.pojo.education.dto.ChapterVO;
 import com.gootschool.pojo.search.Goods;
 import com.gootschool.pojo.search.request.SearchRequest;
-import com.gootschool.search.client.ISearchCourseClient;
-import com.gootschool.search.client.ISearchSubjectClient;
-import com.gootschool.search.client.ISearchTeacherClient;
+import com.gootschool.search.client.*;
 import com.gootschool.search.dao.IGoodsRepository;
 import com.gootschool.search.service.ISearchGoodsService;
 import org.apache.commons.lang3.StringUtils;
@@ -38,6 +38,10 @@ public class SearchGoodsServiceImpl implements ISearchGoodsService {
     private ISearchTeacherClient teacherClient;
     @Autowired
     private ISearchSubjectClient subjectClient;
+    @Autowired
+    private ISearchChapterClient chapterClient;
+    @Autowired
+    private ISearchCourseDescriptionClient descriptionClient;
 
 
     @Override
@@ -113,6 +117,50 @@ public class SearchGoodsServiceImpl implements ISearchGoodsService {
 
         return RevanResponse.ok().data("items", search.getContent())
                 .data("totalPage", search.getTotalPages());
+    }
+
+    @Override
+    public RevanResponse courseInfo(String courseId) {
+        // 1.获取课程
+        RevanResponse response = this.searchCourseClient.getCourseById(courseId);
+        Object data = response.getData().get("course");
+        Course course = JSON.parseObject(JSON.toJSONString(data), Course.class);
+
+        // 2.查询讲师信息
+        RevanResponse teacherResponse = this.teacherClient.queryById(course.getTeacherId());
+        Object teacherData = teacherResponse.getData().get("teacher");
+        Teacher teacher = JSON.parseObject(JSON.toJSONString(teacherData), Teacher.class);
+
+        // 3.分类名称
+        RevanResponse subjectResponse = this.subjectClient.querySubjectsByIds(Arrays.asList(course.getSubjectId1(), course.getSubjectId2()));
+        Object subjectsData = subjectResponse.getData().get("subjects");
+        List<Subject> subjects = JSON.parseArray(JSON.toJSONString(subjectsData), Subject.class);
+
+        // 4.获取课程描述
+        RevanResponse courseDescription = this.descriptionClient.getCourseDescriptionByCourseId(courseId);
+        Object courseDescriptionData = courseDescription.getData().get("description");
+        CourseDescription description = JSON.parseObject(JSON.toJSONString(courseDescriptionData), CourseDescription.class);
+
+        // 5.查询章节列表
+        RevanResponse chapterResponse = this.chapterClient.fetchChapterListByCourseId(courseId);
+        Object chapterData = chapterResponse.getData().get("items");
+        List<ChapterVO> chapterVOs = JSON.parseArray(JSON.toJSONString(chapterData), ChapterVO.class);
+
+
+        // 拼接商品
+        Goods goods = new Goods();
+        BeanUtils.copyProperties(course, goods);
+        //讲师名称
+        goods.setTeacherName(teacher.getName());
+        //科目
+        goods.setSubjectName1(subjects.get(0).getTitle());
+        goods.setSubjectName2(subjects.get(1).getTitle());
+        goods.setDescription(description.getDescription());
+
+        return RevanResponse.ok().
+                data("chapters", chapterVOs).
+                data("goods", goods).
+                data("teacher", teacher);
     }
 
 }

@@ -2,6 +2,7 @@ package com.gootschool.education.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.gootschool.common.response.RevanResponse;
 import com.gootschool.pojo.education.CourseDescription;
 
 /**
@@ -12,4 +13,10 @@ import com.gootschool.pojo.education.CourseDescription;
  */
 public interface ICourseDescriptionService extends IService<CourseDescription> {
 
+    /**
+     * 获取课程描述
+     * @param courseId
+     * @return
+     */
+    RevanResponse getCourseDescriptionByCourseId(String courseId);
 }

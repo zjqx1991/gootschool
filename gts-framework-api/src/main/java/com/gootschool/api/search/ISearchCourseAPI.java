@@ -16,4 +16,8 @@ public interface ISearchCourseAPI {
     @PostMapping("/list")
     RevanResponse courseList(@RequestBody SearchRequest searchRequest);
 
+    @ApiOperation("课程详情")
+    @GetMapping("/info/{courseId}")
+    RevanResponse courseInfo(@PathVariable("courseId") String courseId);
+
 }

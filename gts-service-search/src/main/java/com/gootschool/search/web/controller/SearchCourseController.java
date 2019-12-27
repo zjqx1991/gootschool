@@ -5,6 +5,7 @@ import com.gootschool.common.response.RevanResponse;
 import com.gootschool.pojo.search.request.SearchRequest;
 import com.gootschool.search.service.ISearchGoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class SearchCourseController implements ISearchCourseAPI {
     @Override
     public RevanResponse courseList(@RequestBody SearchRequest searchRequest) {
         return this.goodsService.queryCourseList(searchRequest);
+    }
+
+    @Override
+    public RevanResponse courseInfo(@PathVariable("courseId") String courseId) {
+        return this.goodsService.courseInfo(courseId);
     }
 }

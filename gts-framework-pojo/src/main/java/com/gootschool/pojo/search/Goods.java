@@ -46,6 +46,9 @@ public class Goods implements Serializable {
     @ApiModelProperty(value = "课程标题")
     private String title;
 
+    @ApiModelProperty(value = "课程描述")
+    private String description;
+
     @ApiModelProperty(value = "课程销售价格，设置为0则可免费观看")
     private BigDecimal price;
 
