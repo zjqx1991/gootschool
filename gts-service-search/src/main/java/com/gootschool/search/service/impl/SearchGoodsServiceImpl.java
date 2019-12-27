@@ -6,15 +6,21 @@ import com.gootschool.pojo.education.Course;
 import com.gootschool.pojo.education.Subject;
 import com.gootschool.pojo.education.Teacher;
 import com.gootschool.pojo.search.Goods;
+import com.gootschool.pojo.search.request.SearchRequest;
 import com.gootschool.search.client.ISearchCourseClient;
 import com.gootschool.search.client.ISearchSubjectClient;
 import com.gootschool.search.client.ISearchTeacherClient;
 import com.gootschool.search.dao.IGoodsRepository;
 import com.gootschool.search.service.ISearchGoodsService;
-import com.netflix.discovery.converters.Auto;
 import org.apache.commons.lang3.StringUtils;
+import org.elasticsearch.index.query.Operator;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.elasticsearch.core.query.FetchSourceFilter;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -61,12 +67,52 @@ public class SearchGoodsServiceImpl implements ISearchGoodsService {
         goods.setSubjectName2(subjects.get(1).getTitle());
         //搜索条件
         goods.setSearchWord(
-                    teacher.getName() + " " +
-                    subjects.get(0).getTitle() + " " +
-                    subjects.get(1).getTitle()
-                );
+                teacher.getName() + " " +
+                        subjects.get(0).getTitle() + " " +
+                        subjects.get(1).getTitle()
+        );
 
         // 保存到索引库
         this.goodsRepository.save(goods);
     }
+
+    @Override
+    public RevanResponse queryCourseList(SearchRequest request) {
+
+        // 构建查询条件
+        NativeSearchQueryBuilder queryBuilder = new NativeSearchQueryBuilder();
+
+
+        // 查询条件
+        String key = request.getKey();
+        // TODO 禁止没有条件查询，（因为数据太多）
+        if (StringUtils.isBlank(key)) {
+            int page = request.getPage();
+            int size = request.getSize();
+            queryBuilder.withPageable(PageRequest.of(page - 1, size));
+
+            Page<Goods> search = this.goodsRepository.search(queryBuilder.build());
+
+            return RevanResponse.ok().data("items", search.getContent())
+                    .data("totalPage", search.getTotalPages());
+        }
+
+        // 1.对可以进行全文检索查询
+        queryBuilder.withQuery(QueryBuilders.matchQuery("searchWord", key).operator(Operator.AND));
+        // 2、通过sourceFilter设置返回的结果字段,我们只需要id、skus、subTitle
+        // 来选择要返回的结果，否则返回一堆没有的数据，影响查询效率
+        //queryBuilder.withSourceFilter(new FetchSourceFilter(
+        //       new String[]{"id","skus","subTitle"}, null));
+
+        // 3.分页
+        int page = request.getPage();
+        int size = request.getSize();
+        queryBuilder.withPageable(PageRequest.of(page - 1, size));
+
+        Page<Goods> search = this.goodsRepository.search(queryBuilder.build());
+
+        return RevanResponse.ok().data("items", search.getContent())
+                .data("totalPage", search.getTotalPages());
+    }
+
 }
