@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gootschool.common.code.RevanCodeEnum;
 import com.gootschool.common.constants.CourseConstants;
+import com.gootschool.common.constants.MQRoutingType;
 import com.gootschool.common.constants.PriceConstants;
 import com.gootschool.common.handler.RevanException;
 import com.gootschool.common.response.RevanResponse;
@@ -14,10 +15,7 @@ import com.gootschool.education.mapper.IChapterMapper;
 import com.gootschool.education.mapper.ICourseDescriptionMapper;
 import com.gootschool.education.mapper.ICourseMapper;
 import com.gootschool.education.mapper.IVideoMapper;
-import com.gootschool.education.service.IChapterService;
-import com.gootschool.education.service.ICourseDescriptionService;
 import com.gootschool.education.service.ICourseService;
-import com.gootschool.education.service.IVideoService;
 import com.gootschool.pojo.education.Chapter;
 import com.gootschool.pojo.education.Course;
 import com.gootschool.pojo.education.CourseDescription;
@@ -25,9 +23,8 @@ import com.gootschool.pojo.education.Video;
 import com.gootschool.pojo.education.dto.CoursePublishVO;
 import com.gootschool.pojo.education.request.CourseInfoForm;
 import com.gootschool.pojo.education.request.CourseQuery;
-import com.netflix.discovery.converters.Auto;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.util.StringUtil;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,6 +52,8 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
     private IChapterMapper chapterMapper;
     @Autowired
     private IVideoClient videoClient;
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     @Override
     public RevanResponse courseList(Integer page, Integer size, CourseQuery courseQuery) {
@@ -173,6 +172,8 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
         if (update == 0) {
             throw new RevanException(RevanCodeEnum.COURSE_PUBLISH_FAIL);
         }
+        // 课程发布消息
+        this.sendMessage(MQRoutingType.COURSE_PUBLISH_ROUTE, course.getId());
         return RevanResponse.ok().message("课程发布成功").data("course", course);
     }
 
@@ -267,6 +268,21 @@ public class CourseServiceImpl extends ServiceImpl<ICourseMapper, Course> implem
                 .eq("title", courseInfoForm.getTitle());
         List<Course> courses = this.baseMapper.selectList(queryWrapper);
         return courses;
+    }
+
+    /**
+     * 发送消息到mq，生产者
+     * @param type
+     * @param id
+     */
+    private void sendMessage(String type, String id) {
+        try {
+            this.amqpTemplate.convertAndSend(type, id);
+        }catch (Exception e){
+            System.out.println(type);
+            System.out.println(id);
+            System.out.println(e.getMessage());
+        }
     }
 
 }

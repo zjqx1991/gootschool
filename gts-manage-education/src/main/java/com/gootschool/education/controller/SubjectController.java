@@ -9,8 +9,11 @@ import com.gootschool.pojo.education.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * 课程科目 前端控制器
@@ -42,6 +45,11 @@ public class SubjectController implements IEducationSubjectAPI {
     @Override
     public RevanResponse deleteSubjectById(@PathVariable("id") String id) {
         return this.subjectService.deleteSubjectById(id);
+    }
+
+    @Override
+    public RevanResponse querySubjectsByIds(@RequestParam("ids") List<String> ids) {
+        return this.subjectService.querySubjectsByIds(ids);
     }
 }
 

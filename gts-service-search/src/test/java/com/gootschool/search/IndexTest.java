@@ -7,6 +7,7 @@ import com.gootschool.pojo.education.Course;
 import com.gootschool.pojo.education.request.CourseQuery;
 import com.gootschool.pojo.search.Goods;
 import com.gootschool.search.client.ISearchCourseClient;
+import com.gootschool.search.client.ISearchSubjectClient;
 import com.gootschool.search.dao.IGoodsRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +18,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -30,13 +32,14 @@ public class IndexTest {
     private ISearchCourseClient searchCourseClient;
     @Autowired
     private IGoodsRepository goodsRepository;
+    @Autowired
+    private ISearchSubjectClient subjectClient;
 
     @Test
     public void createIndex() {
         this.esTemplate.createIndex(Goods.class);
         this.esTemplate.putMapping(Goods.class);
     }
-
 
     @Test
     public void loadData() {
@@ -62,6 +65,12 @@ public class IndexTest {
 
         this.goodsRepository.saveAll(goodsList);
 //        }while (size == 100);
+    }
+
+    @Test
+    public void subjectTest() {
+        RevanResponse subjectResponse = this.subjectClient.querySubjectsByIds(Arrays.asList("1205319903793246209", "1205319903965212674"));
+        System.out.println(subjectResponse);
     }
 
 }

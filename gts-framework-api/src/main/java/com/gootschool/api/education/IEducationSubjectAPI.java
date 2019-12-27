@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Api(value = "课程科目管理", description = "课程科目管理，提供增、删、改、查")
 @RequestMapping("/education/subject")
 public interface IEducationSubjectAPI {
@@ -27,5 +29,9 @@ public interface IEducationSubjectAPI {
     @ApiOperation("删除课程")
     @DeleteMapping("/delete/{id}")
     RevanResponse deleteSubjectById(@PathVariable("id") String id);
+
+    @ApiOperation("通过id获取对应课程名称")
+    @GetMapping("/ids")
+    RevanResponse querySubjectsByIds(@RequestParam("ids") List<String> ids);
 
 }

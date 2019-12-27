@@ -6,6 +6,8 @@ import com.gootschool.common.response.RevanResponse;
 import com.gootschool.pojo.education.Subject;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 /**
  * <p>
  * 课程科目 服务类
@@ -42,4 +44,10 @@ public interface ISubjectService extends IService<Subject> {
      */
     RevanResponse deleteSubjectById(String id);
 
+    /**
+     * 通过 id 集合查询相应的科目
+     * @param ids
+     * @return
+     */
+    RevanResponse querySubjectsByIds(List<String> ids);
 }
