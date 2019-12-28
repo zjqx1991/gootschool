@@ -2,29 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="807ffc01-2a65-4b06-8436-3d11e543424c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationCourseDescriptionAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/CourseDescriptionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-goods/gts-service-goods.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-goods/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-goods/src/main/java/com/gootschool/goods/GTSGoodsApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-goods/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-goods/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/client/ISearchChapterClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/client/ISearchCourseDescriptionClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/vod/IVodAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/gts-service-vod-aliyun.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/GTSVodApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/config/AliOSSProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/config/Swagger2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/service/IVodService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/service/impl/VodServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/utils/AliyunVodClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod/web/controller/GTSVodController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationCourseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/education/IEducationCourseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/search/ISearchCourseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/search/ISearchCourseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/search/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-pojo/src/main/java/com/gootschool/pojo/search/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseDescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseDescriptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/ICourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseDescriptionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseDescriptionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-manage-education/src/main/java/com/gootschool/education/service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/service/ISearchGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/service/ISearchGoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/service/impl/SearchGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/service/impl/SearchGoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/web/controller/SearchCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search/web/controller/SearchCourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/upload/IUploadAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-api/src/main/java/com/gootschool/api/upload/IUploadAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-framework-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gts-framework-gateway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-goods/gts-service-goods.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-search/gts-service-search.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/controller/GTSUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/controller/GTSUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/service/IUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/service/IUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/service/impl/UploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gts-service-upload/src/main/java/com/gootschool/upload/service/impl/UploadServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,7 +89,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-service-goods/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -99,18 +100,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gootschool.api.vod" />
+      <recent name="com.gootschool.vod.utils" />
       <recent name="com.gootschool.search.client" />
       <recent name="com.gootschool.education.controller" />
       <recent name="com.gootschool.api.education" />
-      <recent name="com.gootschool.api.search" />
-      <recent name="com.gootschool.common.constants" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/java/com/gootschool/vod" />
+      <recent name="$PROJECT_DIR$/gts-service-vod-aliyun/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-service-goods/src/main/resources" />
       <recent name="$PROJECT_DIR$/gts-service-search/src/main/java/com/gootschool/search" />
       <recent name="$PROJECT_DIR$/gts-service-search/src/main/resources" />
-      <recent name="$PROJECT_DIR$/gts-service-statistics/src/main/java/com/gootschool/statistics" />
-      <recent name="$PROJECT_DIR$/gts-service-statistics/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -130,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IndexTest.createIndex">
+  <component name="RunManager" selected="Spring Boot.GTSVodApplication">
     <configuration name="IndexTest.createIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gts-service-search" />
       <extension name="coverage">
@@ -142,22 +143,6 @@
       <option name="PACKAGE_NAME" value="com.gootschool.search" />
       <option name="MAIN_CLASS_NAME" value="com.gootschool.search.IndexTest" />
       <option name="METHOD_NAME" value="createIndex" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IndexTest.loadData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gts-service-search" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.gootschool.search.web.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.gootschool.search" />
-      <option name="MAIN_CLASS_NAME" value="com.gootschool.search.IndexTest" />
-      <option name="METHOD_NAME" value="loadData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -247,6 +232,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GTSVodApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gts-service-vod-aliyun" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gootschool.vod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gootschool.vod.GTSVodApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Spring Boot.GTSEducationApplication" />
       <item itemvalue="Spring Boot.GTSGateWayApplication" />
@@ -256,17 +254,17 @@
       <item itemvalue="Spring Boot.GTSStatisticsApplication" />
       <item itemvalue="Spring Boot.GTSSearchApplication" />
       <item itemvalue="JUnit.IndexTest.createIndex" />
-      <item itemvalue="JUnit.IndexTest.loadData" />
       <item itemvalue="JUnit.IndexTest.subjectTest" />
       <item itemvalue="Spring Boot.GTSGoodsApplication" />
+      <item itemvalue="Spring Boot.GTSVodApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.GTSVodApplication" />
         <item itemvalue="Spring Boot.GTSStatisticsApplication" />
         <item itemvalue="Spring Boot.GTSUserCenterApplication" />
         <item itemvalue="JUnit.IndexTest.createIndex" />
         <item itemvalue="JUnit.IndexTest.subjectTest" />
-        <item itemvalue="JUnit.IndexTest.loadData" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +281,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.30706075" />
+          <option name="contentProportion" value="0.34811166" />
           <treeState>
             <expand>
               <path>

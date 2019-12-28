@@ -27,19 +27,4 @@ public interface IUploadAPI {
     @PostMapping("/video")
     RevanResponse uploadVideo(MultipartFile file);
 
-
-    @ApiOperation("删除视频文件")
-    @PostMapping("/deleteIds")
-    RevanResponse deleteVideoByVideoIds(@RequestParam("videoIds") List<String> videoIds);
-
-
-    @ApiOperation("删除视频文件")
-    @PostMapping("/delete/{videoId}")
-    RevanResponse deleteVideoById(@PathVariable("videoId") String videoId);
-
-
-    @ApiOperation("根据视频id获取视频信息")
-    @GetMapping("/videoInfo/{videoId}")
-    RevanResponse fetchVideoInfoById(@PathVariable("videoId") String videoId);
-
 }

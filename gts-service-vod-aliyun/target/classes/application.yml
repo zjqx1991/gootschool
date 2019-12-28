@@ -1,0 +1,25 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: gts-service-vod
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+aliyun:
+  oss:
+    endpoint: oss-cn-huhehaote.aliyuncs.com
+    accessKeyId: LTAI4FuTT8bymiPEARsB4NAg
+    accessKeySecret: 2vmHrQd4QieOuy5BZ1qor5TqKwwJ7c
+    bucketName: gootschool
+    fileHost: avatar
+
+

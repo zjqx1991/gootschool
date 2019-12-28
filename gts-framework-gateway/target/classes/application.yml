@@ -38,6 +38,10 @@ zuul:
       path: /search/**
       serviceId: gts-service-search
       strip-prefix: false
+    service-vod:
+      path: /vod/**
+      serviceId: gts-service-vod
+      strip-prefix: false
 
 ribbon:
   ConnectTimeout: 1000 # 连接超时时间(ms)

@@ -1,0 +1,37 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.gootschool.vod.config.AliOSSProperties",
+      "name": "aliyun.oss",
+      "type": "com.gootschool.vod.config.AliOSSProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.gootschool.vod.config.AliOSSProperties",
+      "name": "aliyun.oss.access-key-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gootschool.vod.config.AliOSSProperties",
+      "name": "aliyun.oss.access-key-secret",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gootschool.vod.config.AliOSSProperties",
+      "name": "aliyun.oss.bucket-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gootschool.vod.config.AliOSSProperties",
+      "name": "aliyun.oss.endpoint",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.gootschool.vod.config.AliOSSProperties",
+      "name": "aliyun.oss.file-host",
+      "type": "java.lang.String"
+    }
+  ]
+}

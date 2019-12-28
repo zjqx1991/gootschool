@@ -1,0 +1,15 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: gts-service-goods
+  thymeleaf:
+    cache: false
+
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+

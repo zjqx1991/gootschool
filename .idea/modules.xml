@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gts-service-aliyun-vod/gts-service-aliyun-vod.iml" filepath="$PROJECT_DIR$/gts-service-aliyun-vod/gts-service-aliyun-vod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gts-stst/gts-stst.iml" filepath="$PROJECT_DIR$/gts-stst/gts-stst.iml" />
+    </modules>
+  </component>
+</project>

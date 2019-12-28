@@ -20,6 +20,7 @@
         <module>gts-service-statistics</module>
         <module>gts-service-search</module>
         <module>gts-service-goods</module>
+        <module>gts-service-vod-aliyun</module>
     </modules>
 
     <parent>

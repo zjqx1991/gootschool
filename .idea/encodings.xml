@@ -13,5 +13,6 @@
     <file url="file://$PROJECT_DIR$/gts-service-statistics" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gts-service-upload" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gts-service-usercenter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gts-service-vod-aliyun" charset="UTF-8" />
   </component>
 </project>
