@@ -42,7 +42,7 @@
         <com.baomidou.mybatis.plus.version>3.0.5</com.baomidou.mybatis.plus.version>
         <org.apache.velocity.velocity.version>2.0</org.apache.velocity.velocity.version>
         <io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
-        <mysql.connector.version>8.0.18</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
         <com.aliyun.oss.version>3.8.0</com.aliyun.oss.version>
         <com.aliyun.core.version>4.3.3</com.aliyun.core.version>
         <com.aliyun.vod.version>2.15.2</com.aliyun.vod.version>
